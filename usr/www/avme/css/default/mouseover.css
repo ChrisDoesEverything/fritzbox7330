@@ -1,0 +1,16 @@
+.mouseovershadow,
+.mouseover {
+position:absolute;
+background-color:lightyellow;
+padding:5px;
+border: 1px solid #000000;
+z-index: 20;
+}
+.mouseovershadow {
+position:absolute;
+color: #000000;
+background-color: #000000;
+z-index: 10;
+opacity: 0.3;
+filter:alpha(opacity=30);
+}

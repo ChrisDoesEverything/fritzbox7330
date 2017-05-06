@@ -1,0 +1,14 @@
+table.zebra {
+margin: 0 auto;
+width: auto;
+}
+td,th {
+padding: 4px 10px;
+}
+td.call_in,
+td.call_in_fail,
+td.call_rejected,
+td.call_out,
+td.call_no {
+width: 20px;
+}

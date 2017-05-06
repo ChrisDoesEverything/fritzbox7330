@@ -1,0 +1,7 @@
+/* NUR IE 7 Fixes */
+#menuBox {
+float: left;
+}
+#page_content_menu_box {
+float: right;
+}

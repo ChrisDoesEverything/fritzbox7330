@@ -1,0 +1,24 @@
+p.waitimg {
+text-align: center;
+}
+p.waitimg img {
+width: 325px;
+height: 5px;
+}
+p.ani_wait, p.ani_finish_fail, p.ani_finish_ok {
+text-align: center;
+width: 325px;
+height: 5px;
+background-image: url(images/wait.gif);
+background-repeat: no-repeat;
+background-position: top center;
+}
+p.ani_finish_ok {
+background-image: url(images/finished_ok_green.gif);
+}
+p.ani_finish_fail {
+background-image: url(images/finished_error.gif);
+}
+.wait {
+text-align: center;
+}

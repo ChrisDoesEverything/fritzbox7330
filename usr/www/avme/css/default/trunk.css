@@ -1,0 +1,130 @@
+.formular input+span+input
+{
+margin-left:10px;
+}
+.formular span.form_input_note+span
+{
+margin-left:30px;
+}
+.WhiteBox,
+.GrayBox{
+background-color: #eeeeee;
+display:table-cell;
+width:741px;
+vertical-align:middle;
+}
+.WhiteBox{
+background-color: #ffffff;
+}
+.centerButton
+{
+position :relative;
+top: 2px;
+}
+.SelProvider
+{
+position :relative;
+width: 141px;
+}
+.formular .select_note {
+margin-bottom: 1px;
+margin-left: 206px;
+margin-top: 0;
+}
+.formular .WhiteBox label,
+.formular .GrayBox label
+{
+margin-left: 4px;
+width:196px;
+}
+.GrayBox a,
+.WhiteBox a
+{
+padding-left: 4px;
+}
+.BoxTable{
+display:table-row;
+}
+.TrunkContent{
+padding:2px;
+display:table;
+border-collapse: collapse;
+width:100%;
+}
+.span_middle {
+display:inline-block;
+text-align:right;
+width:12px;
+}
+#MainForm input[type=text] {
+width:300px;
+}
+#MainForm select {
+width:305px;
+}
+#MainForm .TrunkInputTwo,
+#MainForm .TrunkInputOutSpanTwo
+#MainForm .TrunkInputOneWithPrefix2,
+#MainForm .TrunkInputOneWithPrefix4{
+}
+#MainForm .TrunkInputTwo input,
+#MainForm .TrunkInputOutSpanTwo input{
+width:60px;
+}
+#MainForm .TrunkInputTwo input+span{
+width:10px;
+margin:0;
+text-align: center;
+padding: 0;
+}
+#MainForm .TrunkInputTwo input+span+input,
+#MainForm .TrunkInputOutSpanTwo input+input,
+#MainForm .TrunkInputOutSpanTwo input+span+input{
+margin-left: 0px;
+width:225px;
+}
+#MainForm .TrunkInputOutSpanTwo input+span{
+margin-left: 0px;
+}
+#MainForm .TrunkInputOutSpanTwo input+input,
+#MainForm .TrunkInputOutSpanTwo input+span+input{
+margin-left: 10px;
+}
+#MainForm .TrunkInputOneWithPrefix2 span+input{
+width:285px;
+}
+#MainForm .TrunkInputOneWithPrefix4 span+input{
+width:272px;
+}
+#MainForm .IsUserprefix6 span+input{
+width:258px;
+}
+.DontShow{
+display: none;
+}
+.ShowSipActiv,.ShowProvider,.ShowDirectDialIn,.ShowDirectDialIn,.ShowDirectDialIn,.ShowNumbers,.ShowUsername,
+.ShowPassword,.ShowRegistrar,.ShowProxy,.ShowStun,.ShowExp,.ShowEmergency,.ShowDtmf,.ShowClir,.ShowDditype,.ShowSipUri,
+.ShowTrunk,.ShowG726NACHRFC3551,.ShowCCBS,.ShowOverInternet,.ShowOKZ,.ShowSpit,.ShowTComLinks
+{
+display:block;
+}
+#uiSumTable td{
+vertical-align:top;
+}
+#uiPreFixTbl {
+background-color: transparent;
+margin:0px;
+width:auto;
+border:none;
+}
+#uiPreFixTbl label {
+width:auto;
+margin-left:10px;
+}
+#uiPreFixTbl input {
+margin-left:15px;
+}
+#uiPreFixTbl span {
+width:185px;
+display:inline-block;
+}

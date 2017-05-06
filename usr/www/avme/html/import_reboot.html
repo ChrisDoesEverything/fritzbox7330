@@ -1,0 +1,30 @@
+<? include tools/static_html_head.html ?>
+<script type="text/javascript" src="/js/jxl.js"></script>
+<script type="text/javascript" src="/js/ajax.js"></script>
+<script type="text/javascript">
+function init() {
+jxl.hide("manual");
+jxl.hide("btn_form_foot");
+jxl.setHtml("forward",
+"<p class=\"waitimg\"><img src=\"/css/default/images/wait.gif\"></p>"+
+"<p>{?4024:604?}</p>");
+ajaxWaitForBox();
+}
+window.onload = init;
+</script>
+<? include tools/static_page_head.html ?>
+<div class="blue_bar_back">
+<h2>{?4024:420?}</h2>
+</div>
+<div id="page_content" class="page_content">
+<p>{?4024:521?}</p>
+<p>{?4024:64?}</p>
+<p id="manual">{?4024:932?}</p>
+<div id="forward"></div>
+<form method="GET" action="/">
+<div id="btn_form_foot">
+<button type="submit">{?txtToOverview?}</button>
+</div>
+</form>
+</div>
+<? include tools/static_foot.html ?>

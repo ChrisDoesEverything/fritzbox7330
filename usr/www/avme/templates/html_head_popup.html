@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=content-type content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title><?lua box.html(g_page_title) ?></title>
+<link rel="stylesheet" type="text/css" href="/css/default/main.css"/>
+<?lua
+if not g_print_mode then
+box.out([[<link rel="stylesheet" type="text/css" href="/css/default/print.css" media="print"/>]])
+else
+box.out([[
+<link rel="stylesheet" type="text/css" href="/css/default/print.css"/>
+<link rel="stylesheet" type="text/css" href="/css/default/printpreview.css" media="screen"/>
+]])
+end
+?>
+<!--[if lte IE 8]>
+<link rel="stylesheet" type="text/css" href="/css/default/ie_fix.css"/>
+<![endif]-->
+<!--[if IE]>
+<style type="text/css">
+.hide_ftp_link {display: none;}
+</style>
+<![endif]-->
+<style type="text/css">
+body {
+min-width: 400px;
+}
+</style>
+<script type="text/javascript" src="/js/jxl.js"></script>
+<script type="text/javascript" src="/js/ready.js"></script>
+<script type="text/javascript" src="/js/help.js"></script>
+<script type="text/javascript" src="/js/popup.js?lang=<?lua box.out(config.language) ?>"></script>
+<script type="text/javascript" src="/js/zebra.js"></script>
+<!--[if lt IE 8]>
+<script type="text/javascript" src="/js/imgbuttonfixer.js"></script>
+<![endif]-->
+<script type="text/javascript">
+//Click Waitcourser anzeigen
+//ready.onReady(globalOnClick.init);
+if (window.location.search.indexOf("&popupwnd=1")!=-1) {
+ready.onReady(popup.prepareHeader);
+}
+ready.onReady(help.show);
+ready.onReady(zebra);
+</script>

@@ -1,0 +1,23 @@
+.bar {
+vertical-align: middle;
+}
+.bar span {
+display: inline-block;
+width: 80%;
+height: 9px;
+border: 1px solid #C6C7BF;
+background-color: #f8f8f8;
+line-height: 0;
+text-align: left;
+}
+.bar span span {
+border: none;
+background-color: #75CCFF;
+}
+.blocked {
+color: #A55
+}
+.appsrow span {
+display: inline-block;
+white-space: nowrap;
+}

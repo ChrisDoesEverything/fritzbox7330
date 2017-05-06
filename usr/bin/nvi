@@ -1,0 +1,8 @@
+#! /bin/sh
+if [ -z "$1" ] ; then
+	echo "use: $0 <config-filename>"
+	exit 1
+fi
+cat $1 >/var/nvi.tmp && vi /var/nvi.tmp && cat /var/nvi.tmp >$1
+rm -f  /var/nvi.tmp
+

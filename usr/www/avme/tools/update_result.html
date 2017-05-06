@@ -1,0 +1,71 @@
+<? include tools/static_html_head.html ?>
+<? include tools/static_page_head.html ?>
+<div class="blue_bar_back">
+<h2>{?197:98?}</h2>
+</div>
+<div id="page_content" class="page_content">
+<div class="formular">
+<p>{?197:631?}</p>
+<p class="ErrorMsg"><? STATUS ?></p>
+<p>{?197:501?}</p>
+<h4>
+<input type="radio" name="action" id="uiChooseUpdate" checked>
+<label for="uiChooseUpdate">{?197:989?}</label>
+</h4>
+<div id="uiUpdatePart" class="formular">
+<form method="POST" action="/cgi-bin/firmwarecfg" enctype="multipart/form-data" id="uiMainForm">
+<input type="hidden" name="sid" value="<? SID ?>">
+<ol>
+<li>
+<p>{?197:833?}</p>
+<input type="file" name="UploadFile" size="40">
+</li>
+<li>
+<p>{?197:853?}</p>
+<button type="submit" name="upgrade" id="uiUpdate">{?197:589?}</button>
+</li>
+</ol>
+</form>
+</div>
+<h4>
+<input type="radio" name="action" id="uiChooseReboot">
+<label for="uiChooseReboot">{?197:465?}</label>
+</h4>
+<div id="uiRebootPart" class="formular">
+<p>{?197:262?}</p>
+<form method="POST" action="/cgi-bin/firmwarecfg" enctype="multipart/form-data">
+<div>
+<input type="hidden" name="sid" value="<? SID ?>">
+<button type="submit" name="reboot" id="uiReboot">{?197:474?}</button>
+</div>
+</form>
+</div>
+<div id="uiStatus">&nbsp;</div>
+</div>
+</div>
+<script type="text/javascript" src="/js/jxl.js"></script>
+<script type="text/javascript" src="/js/ajax.js"></script>
+<script type="text/javascript">
+function init() {
+var form = jxl.get("uiMainForm");
+if (form) {
+form.onsubmit = uiDoOnMainFormSubmit;
+}
+uiDoOnActionChoice();
+jxl.addEventHandler("uiChooseUpdate", "click", uiDoOnActionChoice);
+jxl.addEventHandler("uiChooseReboot", "click", uiDoOnActionChoice);
+}
+function uiDoOnMainFormSubmit() {
+jxl.setHtml("uiStatus", "{?197:584?}");
+jxl.disable("uiUpdate");
+jxl.disable("uiReboot");
+jxl.setStyle("uiMainForm", "cursor", "wait");
+return true;
+}
+function uiDoOnActionChoice() {
+jxl.display("uiUpdatePart", jxl.getChecked("uiChooseUpdate"));
+jxl.display("uiRebootPart", jxl.getChecked("uiChooseReboot"));
+}
+window.onload = init;
+</script>
+<? include tools/static_foot.html ?>

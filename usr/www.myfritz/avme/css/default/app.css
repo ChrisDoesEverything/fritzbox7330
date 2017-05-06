@@ -1,0 +1,18 @@
+/****************** Css zum korrekten Anzeigen der Seite in der Myfritz App ******************/
+@media (min-width: 760px) and (max-width: 1024px) {
+/*für Tablet und kleine Dektops*/
+body {
+padding: 0;
+}
+}
+@media (min-width: 1025px) {
+#foot_box {
+padding: 0;
+}
+}
+/* Tablet */
+@media (min-width: 760px) and (max-width: 1024px) {
+#page_content {
+top: 0;
+}
+}

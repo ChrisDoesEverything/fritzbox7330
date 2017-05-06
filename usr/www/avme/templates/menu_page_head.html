@@ -1,0 +1,36 @@
+<div id="menuBox">
+<?lua
+require"menu"
+if g_page_title == "" then
+g_page_title = menu.get_page_title()
+end
+if g_menu_active_page then
+menu.override_active_page(g_menu_active_page, g_menu_active_showtabs)
+end
+box.out([[<div id="menucontent" class="menu_body_outer">]])
+menu.write_menu('main')
+box.out([[</div>]])
+if menu.show_additional_menu("wizards") then
+box.out([[<div id="MainWizardhead" class='main_menu_bubble'>]])
+menu.write_menu('wizards')
+box.out([[</div>]])
+end
+if config.NAS then
+if menu.show_additional_menu("fritznas") then
+box.out([[<div id='MainNashead' class='main_menu_bubble'>]])
+menu.write_menu([[fritznas]])
+box.out([[</div>]])
+end
+end
+if menu.show_additional_menu("myfritz") then
+box.out([[<div id='MainMyFritzhead' class='main_menu_bubble'>]])
+menu.write_menu('myfritz')
+box.out([[</div>]])
+end
+if menu.show_additional_menu("livetv") then
+box.out([[<div id="MainLiveTVhead" class='main_menu_bubble'>]])
+menu.write_menu('livetv')
+box.out([[</div>]])
+end
+?>
+</div>

@@ -1,0 +1,115 @@
+#!/bin/sh
+if [ $# -lt 2 ]; then exit 2; fi
+ringtonename=$4
+dir=
+cd /var/InternerSpeicher 2>/dev/null
+if [ "$?" -eq "0" ]; then
+    while [ `realpath .` != "/" ]; do
+        wo=`/bin/mount | grep "\`realpath .\` "`
+        if [ "$?" -eq "0" ]; then
+            if echo $wo | grep -e '\(^/dev/loop\|^ramfs\)'; then
+                nand=0
+            else
+                nand=1
+            fi
+            break
+        fi
+        cd ..
+    done
+    if [ `realpath .` == "/" ]; then
+        nand=0
+    fi
+else
+    nand=0
+fi
+if [ -d "/var/InternerSpeicher" ] && [ "$nand" == "1" ]; then
+    dir="/var/InternerSpeicher"
+    if [ ! -d "$dir/FRITZ/fonring" ]; then 
+        if ! mkdir -p "$dir/FRITZ/fonring"; then
+            exit 4
+        fi
+    fi
+    if [ -d "$dir/FRITZ/fonring" ]; then
+        dir="$dir/FRITZ/fonring"
+        break
+    fi
+else
+    dirlist=`mount | grep '/dev/sd.*(rw' | sed -e 's/.*on \(.*\) type.*/\1/'`
+    if [ -z "$dirlist" ]; then
+        exit 3
+    fi
+    for i in $dirlist; do
+        if [ -d "$i" ]; then
+            if [ ! -d "$i/FRITZ/fonring" ]; then 
+                if ! mkdir -p "$i/FRITZ/fonring"; then
+                    nop=nop
+                fi
+            fi
+            if [ -d "$i/FRITZ/fonring" ]; then
+                dir="$i/FRITZ/fonring"
+                break
+            fi
+        fi
+    done
+    if [ -z "$dir" ]; then
+        exit 4
+    fi
+fi
+if [ -z "$dir" ]; then
+    exit 3
+fi
+cat - > "$dir"/upload.mp3
+ret=$?
+if [ $ret -ne 0 ]; then
+    rm -f "$dir"/upload.mp3
+    exit 4
+fi
+hash=`/bin/date +%s`
+filename="${hash}.g722"
+[ -x /etc/init.d/rc.preaudio.sh ] && /etc/init.d/rc.preaudio.sh start
+if [ ${CONFIG_CELT} == "y" ]; then
+DECTBASENUM=610
+WEBVARID=`expr $2 - $DECTBASENUM`
+CODECS=`ctlmgr_ctl r dect settings/Handset$WEBVARID/Codecs`
+case "$CODECS" in
+  *CELT*)
+   filename="${hash}.celt"
+   ffmpegconv -i "$dir/upload.mp3" -o "$dir/$filename" +n --limit 240 --type 10 > /dev/console
+   if [ $? -ne 0 ] ; then
+       ret=8
+   else
+       ret=0
+   fi
+  ;;
+  *)
+   filename="${hash}.g722"
+   ffmpegconv -i "$dir/upload.mp3" -o "$dir/$filename" --limit 240 > /dev/console
+   if [ $? -ne 0 ] ; then
+       ret=8
+   else
+       ret=0
+   fi
+  ;;
+esac
+else
+   filename="${hash}.g722"
+   ffmpegconv -i "$dir/upload.mp3" -o "$dir/$filename" --limit 240 > /dev/console
+   if [ $? -ne 0 ] ; then
+       ret=8
+   else
+       ret=0
+   fi
+fi
+if [ $ret -ne 0 ]; then
+    rm -f "$dir"/upload.mp3
+    exit 1
+fi
+rm -f "$dir"/upload.mp3
+url="file://$dir/$filename"
+if [ -z "$ringtonename" ]; then
+  replaced=`/usr/bin/pbd --set-ringtone-url --book="$1" --id="$2" --url="$url"`
+else
+  replaced=`/usr/bin/pbd --set-ringtone-url --book="$1" --id="$2" --url="$url" --name="$ringtonename"`
+fi  
+ret=$?
+exit $ret

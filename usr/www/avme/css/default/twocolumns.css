@@ -1,0 +1,50 @@
+div.twocolumns {
+width:100%;
+margin:0;
+padding: 0;
+overflow:hidden;
+}
+div.twocolumns div.left {
+width:48%;
+clear:both;
+float:left;
+}
+div.twocolumns div.right {
+width:48%;
+margin-left:50%;
+}
+div#uiSitemap {
+font-size: 13px;
+}
+div#uiSitemap h3 {
+width: 255px;
+height: 22px;
+background-color:#e5eef6;
+font-weight: bold;
+padding-left: 9px;
+padding-bottom: 2px;
+margin-top: 0;
+}
+div#uiSitemap div.left, div#uiSitemap div.right {
+margin-bottom: 17px;
+}
+div#uiSitemap dl {
+margin-left: 40px;
+margin-bottom: 0;
+}
+div#uiSitemap dl dd {
+margin-left: 32px;
+height: 16px;
+}
+div#uiSitemap dl dt {
+height: 18px;
+}
+#uiWizards div a {
+padding-left: 5px;
+}
+#uiWizards p.explain {
+margin: 6px 0 20px 11px;
+}
+#uiWizards p.wizlink {
+font-size: 16px;
+}

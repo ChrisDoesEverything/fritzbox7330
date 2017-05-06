@@ -1,0 +1,199 @@
+.ClassRadioButton
+{
+width:13px;
+}
+.ClassNumberList_Line
+{
+}
+.ClassNumberSelectListTable
+{
+width: 730px;
+background-color: #fbfaf7;
+margin-left:10px;
+border:none;
+background:none;
+}
+.ClassNumberListTable
+{
+width: 730px;
+background-color: #fbfaf7;
+margin-left:10px;
+}
+.ClassSummaryListTable
+{
+width: 730px;
+background-color: #fbfaf7;
+margin-left:10px;
+}
+.ClassNumberList_CheckBox
+{
+width: 30px;
+padding:1px 5px;
+}
+.ClassNumberList_Nr
+{
+width: 90px;
+padding:1px 5px;
+}
+.ClassNumberList_Connect
+{
+width: 620px;
+padding:1px 5px;
+}
+.ClassNumberList_Connect label
+{
+width:auto;
+}
+.ClassNumberList_Empty
+{
+padding:0px 0px;
+}
+.ClassSummary_Nr
+{
+width: 90px;
+padding:0px 0px;
+}
+.ClassSummary_Connect
+{
+width: 620px;
+padding:0px 0px;
+}
+.ClassNumberList_EmptyOrNothing
+{
+padding:0px 0px;
+}
+.ClassSummaryTableLine1
+{
+/*background-color: #eeeeee;*/
+}
+.ClassSummaryTableLine2
+{
+/*background-color: #ffffff;*/
+}
+.ClassSummaryTableLeft
+{
+width: 400px;
+vertical-align: top;
+}
+.ClassSummaryTableRight
+{
+width: auto;
+border-style:none;
+}
+.ClassSummaryTableColRight1
+{
+border-style:none;
+/*background-color: #eeeeee;*/
+}
+.ClassSummaryTableColRight2
+{
+border-style:none;
+/*background-color: #ffffff;*/
+}
+.ClassSummaryTableRight .ClassSummaryTableColRight1 td {
+padding:0px;
+}
+.ClassSummaryTableRight .ClassSummaryTableColRight2 td {
+padding:0px;
+}
+.ClassAlert {
+color: #f66;
+margin-bottom:10px;
+}
+.ClassButtonRight
+{
+float:right;
+}
+.ClassHints
+{
+color:#0066CC;
+}
+.ClassHintsCentered
+{
+color:#0066CC;
+text-align: center;
+}
+.ClassPushButtonFett
+{
+font-weight:bold;
+}
+.ClassDectHintsCentered
+{
+padding-top:10px;
+text-align: center;
+}
+.ClassEditMerkmaleTable
+{
+background-color: #faf8f2;
+border: none;
+margin-left: 10px;
+}
+.ClassEditDectMerkmaleBusyDelayedTable
+{
+border: none;
+background-color: #fbfaf7;
+}
+.ClassEditDectMerkmaleEqualizerColumnTable
+{
+width: 100px;
+text-align: left;
+}
+.ClassEditDectMerkmaleImage
+{
+width: 160px;
+height: 160px;
+background-color: #ffffff;
+margin-top: 10px;
+float:left;
+border: solid 1px;
+}
+.ClassEditDectMerkmaleImage span
+{
+display:inline-block;
+margin: 35% 10%;
+}
+.ClassEditDectMerkmaleImage img
+{
+width: 160px;
+height: 160px;
+float:right;
+}
+.ClassEditDectMerkmaleImageButton
+{
+margin:10px 0 0 171px;
+padding-left: 10px;
+}
+.ClassEditDectMerkmaleImageButton button
+{
+min-width:25px;
+}
+.ClassEditTableLeft
+{
+vertical-align:top;
+padding-top:10px;
+}
+.ClassEditTableRight
+{
+padding-top:10px;
+padding-left:20px;
+}
+.ClassEditFonbookField
+{
+width:212px;
+}
+.ClassEditKlingeltoeneTable
+{
+background-color: #faf8f2;
+border: none;
+}
+.ClassEditKlingeltoeneLeft
+{
+width:230px;
+}
+.ClassEditKlingeltoeneRight
+{
+width:auto;
+}
+.formular ul {
+padding-left:25px;
+}

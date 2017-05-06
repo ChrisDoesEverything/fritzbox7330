@@ -1,0 +1,227 @@
+#intro_boxinfo {
+display: none;
+}
+@media (min-width: 760px) {
+/*tablet und pc*/
+html {
+height: 100%;
+}
+body {
+height: 100%;
+min-height: 0;
+padding: 0;
+}
+p {
+font-size: 72%;
+color: #3F464C;
+}
+.login_outer {
+margin-top: 3cm;
+}
+.login_inner {
+width: 119mm;
+margin: auto;
+}
+.login_head_box {
+text-align: left;
+height: 7mm;
+margin: auto;
+border: 0.35mm solid #8DA4A3;
+border-top-left-radius: 3.7mm;
+border-top-right-radius: 3.7mm;
+/* IE 9 Auch hier wegen gleichzeitiger verwendung von Border radius kein gradient möglich.*/
+background-color: #a5c8e6;
+/* Safari 5.1+, Chrome 10+ */
+background: -webkit-linear-gradient(top, #afd3f3, #a5c8e6);
+/* Firefox 3.6+ */
+background: -moz-linear-gradient(top, #afd3f3, #a5c8e6);
+/* IE 10 */
+background: -ms-linear-gradient(top, #afd3f3, #a5c8e6);
+/* Opera 11.10+ */
+background: -o-linear-gradient(top, #afd3f3, #a5c8e6);
+}
+.login_head_box p {
+font-size: 83%;
+color: #3F464C;
+margin: 1.4mm 0 1.4mm 6mm;
+font-weight: bold;
+}
+.login_content {
+background-color: #faf8f2;
+padding: 0.5em;
+border: 0.35mm solid #8DA4A3;
+border-bottom-left-radius: 3.7mm;
+border-bottom-right-radius: 3.7mm;
+border-top: none;
+}
+.formular {
+text-align: left;
+margin: 0;
+padding: 0.7mm 0 0.7mm 6.75mm;
+}
+label,
+input,
+select {
+margin: 0 0 0.3em;
+color: #3F464C;
+vertical-align: middle;
+display: inline-block;
+font-size: 72%;
+}
+.formular label {
+width: 7.5em;
+margin-right: 0.3em;
+}
+.formular .form_input_note {
+margin-left: 5.8em;
+}
+.formular input {
+width: 56mm;
+font-size: 70%;
+}
+.formular select {
+width: 57mm;
+font-size: 70%;
+}
+.formular p.ErrorMsg,
+.formular p.error_text {
+color: #ff0000;
+font-size: 72%;
+}
+#btn_form_foot {
+border-top: 0.35mm solid #8DA4A3;
+margin-left: -2.5mm;
+margin-top: 2.5mm;
+padding: 2.5mm 2.5mm 0;
+text-align: right;
+width: 100%;
+}
+#btn_form_foot button {
+min-width: 28mm;
+overflow: visible;
+color: #000000;
+font-size: 72%;
+}
+#forgot_pass {
+float: left;
+}
+#forgot_pass a {
+font-size: 72%;
+color: #003365;
+text-decoration: none;
+font-weight: normal;
+}
+#forgot_pass a:hover {
+text-decoration: underline;
+}
+#intro_boxinfo {
+display: block;
+font-size:66%;
+position:relative;
+top:-0.4em;
+width:16.5em;
+float:right;
+padding:0;
+margin:0;
+}
+#intro_boxinfo p {
+margin: 0;
+padding: 0.4em 0.4em 0;
+text-align:right;
+color:#ffffff;
+font-size:100%;
+}
+}
+@media (min-width: 760px) and (max-width: 1024px) {
+/*nur Tablet */
+p,
+label,
+input,
+select,
+#btn_form_foot button {
+font-size: 83%;
+}
+.formular input,
+.formular select,
+.formular p.ErrorMsg,
+.formular p.error_text {
+font-size: 80%;
+}
+#forgot_pass a {
+font-size: 65%;
+}
+}
+@media (max-width: 759px) {
+/*für mobile Ansicht*/
+#intro_menu_box {
+display: none;
+}
+.login_inner {
+width: 85%;
+margin: auto;
+margin-bottom: 2em;
+}
+.login_head_box {
+display: block;
+}
+.formular {
+text-align: left;
+margin: 0;
+padding: 0;
+}
+p {
+font-size: 90%;
+color: #3F464C;
+}
+label,
+input,
+select {
+vertical-align: middle;
+display: inline-block;
+font-size: 90%;
+margin: 0 0 0.3em;
+color: #3F464C;
+}
+.formular label {
+width: 7.5em;
+}
+.formular .form_input_note {
+margin-left: 0;
+}
+.formular input {
+width: 56mm;
+font-size: 85%;
+}
+.formular select {
+width: 57mm;
+font-size: 85%;
+}
+.formular p.ErrorMsg,
+.formular p.error_text {
+color: #ff0000;
+font-size: 80%;
+}
+#btn_form_foot {
+margin-top: 1em;
+text-align: center;
+width: 100%;
+}
+#btn_form_foot button {
+min-width: 28mm;
+overflow: visible;
+color: #000000;
+width: 45%;
+height: 9mm;
+font-size: 90%;
+}
+#forgot_pass {
+position: fixed;
+bottom: 0;
+left: 0;
+text-align: center;
+width: 100%;
+font-size: 70%;
+padding: 2mm 0;
+background-color: #f1f6f9;
+}
+}

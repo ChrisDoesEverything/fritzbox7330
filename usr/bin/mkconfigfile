@@ -1,0 +1,10 @@
+#! /bin/sh
+if [ -x  /bin/mknod ] && [ ! -f "$1" ]; then
+
+major=`grep tffs /proc/devices`
+mknod $1 c ${major%tffs} $2
+
+else
+touch $1
+
+fi

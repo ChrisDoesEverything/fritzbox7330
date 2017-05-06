@@ -1,0 +1,22 @@
+<?lua write_help_head([[{?7333:262?}]]) ?>
+<?lua if box.query("box:settings/expertmode/activated") ~= "1" then
+box.out([[
+<p>{?7333:154?}</p>
+]])
+else
+box.out([[
+<p>{?7333:918?}</p>
+<p>{?7333:954?}</p>
+]])
+end ?>
+<?lua if box.query("box:settings/expertmode/activated") ~= "1" then
+box.out([[
+<p>{?7333:601?}</p>
+]])
+else
+box.out([[
+<p>{?7333:680?}</p>
+<p>{?7333:221?}</p>
+]])
+end ?>
+<p><a href="<?lua href.help_write('hilfe_internet_zugangsdaten.html','offline=yes') ?>">{?7333:7?}</a></p>

@@ -1,0 +1,32 @@
+table.movablerows tbody {
+border-bottom: solid 1px #4391db;
+}
+table.movablerows tr {
+border-left: solid 1px #4391db;
+border-right: solid 1px #4391db;
+}
+table.movablerows tr:first-child {
+border-left: none;
+border-right: none;
+border-bottom: solid 1px #4391db;
+}
+table.movablerows, table.movablerows * {
+-moz-user-select: none;
+-khtml-user-select: none;
+user-select: none;
+}
+table.movablerows tr {
+cursor:url(/css/default/images/grab_hand01.cur), pointer;
+}
+table.movablerows tr:first-child {
+cursor: auto;
+}
+table.movablerows tr.moving {
+cursor:url(/css/default/images/grab_hand02.cur), n-resize;
+}
+table.movablerows tr.moving td {
+background-color: #cee6f4;
+}
+table.movablerows tr.moving td:first-child {
+font-weight: bold;
+}

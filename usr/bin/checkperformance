@@ -1,0 +1,6 @@
+#! /bin/sh
+
+cat /proc/avm/performance_index
+/usr/bin/dhrystone 10000000
+
+

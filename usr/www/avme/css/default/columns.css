@@ -1,0 +1,82 @@
+div.statsContainer {
+position:relative;
+width:100%;
+}
+h4.statshead {
+text-align: center;
+width: 87%;
+}
+div.statsGraphic {
+width: 504px;
+height: 120px;
+background-position: left top;
+background-image:url(/css/default/images/Back24_4.gif);
+background-repeat: no-repeat;
+margin: 0 auto;
+margin-left: 100px;
+}
+div.statsGraphic div.statscolumn {
+height: 100%;
+float: left;
+margin: 0;
+padding: 0;
+width: 20px;
+position:relative;
+}
+div.statsGraphic div.firststatscolumn {
+width:21px;
+}
+div.statsGraphic div.statscolumn div.xscale {
+width:100%;
+height: 24px;
+font-size: 80%;
+text-align: center;
+color: #9cadbd;
+position: absolute;
+bottom: 8px;
+}
+div.statsGraphic div.statscolumn div.valuetop,
+div.statsGraphic div.statscolumn div.value {
+background-position: center bottom;
+background-repeat: repeat-y;
+width:100%;
+font-size: 0;
+position: absolute;
+bottom: 37px;
+}
+div.statsGraphic div.statscolumn div.valuetop {
+background-image:url(/css/default/images/balkenrand24-oben.gif);
+background-repeat: no-repeat;
+height: 1px;
+}
+div.statsGraphic div.statscolumn div.value {
+background-image: url(/css/default/images/balkeneinheit24.gif);
+}
+div.statsGraphic div.statscolumn div.value.cur {
+background-image: url(/css/default/images/balkeneinheit24-gruen.gif);
+}
+div.statsGraphic div.statscolumn div.yscale {
+position: absolute;
+right: 5px;
+font-size: 80%;
+text-align: right;
+color: #9cadbd;
+}
+div.statsGraphic div.statscolumn div.ymax {
+top: 0;
+}
+div.statsGraphic div.statscolumn div.ymin {
+bottom: 30px;
+}
+p.xaxislegend {
+padding-left: 5px;
+font-size: 80%;
+margin-bottom: 3px;
+}
+p.yaxislegend {
+text-align: right;
+font-size: 80%;
+position: relative;
+top: -25px;
+right: 160px;
+}

@@ -1,0 +1,926 @@
+/****************** Allgemein gültige CSS ******************/
+html {
+min-height: 100%;
+}
+body {
+min-height: 100%;
+padding:0;
+margin:0;
+font-family: Arial,serif, sans-serif, cursive;
+font-size: 1.12em;
+color: #3F464C;
+overflow-x: hidden;
+}
+* {
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+*:link {
+-webkit-tap-highlight-color: rgba(135,200,250,0.4);
+}
+a {
+color: #3080c8;
+font-weight: bold;
+}
+.link_divider_vertical {
+display: inline;
+}
+.link_divider_horizontal {
+display: none;
+}
+@media (min-width: 1025px) {
+/*für grosse Dektops*/
+body {
+/* IE kleiner 9 und alte andere Browser */
+background-color: #FFFEBD;
+/* IE 9 geht zwar ein verlauf aber der schaut dann aus den Runden ecken vor daher nur normaler Hintergrund*/
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFA', endColorstr='#FFFEBD', GradientType=0);
+/* Safari 5.1+, Chrome 10+ */
+background: -webkit-linear-gradient(bottom, #FFFEBD, #FFFFFA);
+/* Firefox 3.6+ */
+background: -moz-linear-gradient(bottom, #FFFEBD, #FFFFFA);
+/* IE 10 */
+background: -ms-linear-gradient(bottom, #FFFEBD, #FFFFFA);
+/* Opera 11.10+ */
+background: -o-linear-gradient(bottom, #FFFEBD, #FFFFFA);
+}
+}
+@media (min-width: 760px) and (max-width: 1024px) {
+/*für Tablet und kleine Dektops*/
+body {
+background-color: #f1f6f9;
+}
+}
+@media (max-width: 759px) {
+/*für mobile Ansicht*/
+body {
+background-color: #f1f6f9;
+min-width: 13.33em;
+}
+.link_divider_vertical {
+display: none;
+}
+.link_divider_horizontal {
+display: inline;
+}
+}
+/****************** ENDE Allgemein gültige CSS ******************/
+/****************** Blauer Balken ******************/
+/*Höhe der intro_box muss ermittelbar sein. Daher darf innerhalb des Intros kein margin top oder bottom genutzt werden!!! */
+@media (max-width: 1024px) {
+#intro_bar {
+margin: 0;
+height: 2.8em;
+/*+++ Farbverlauf ++++*/
+/* IE kleiner 9 und alte andere Browser */
+background-color: #2292d4;
+/* IE 9 geht zwar ein verlauf aber der schaut dann aus den Runden ecken vor daher nur normaler Hintergrund*/
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2292d4', endColorstr='#166291', GradientType=0);
+/* Safari 5.1+, Chrome 10+ */
+background: -webkit-linear-gradient(bottom, #0e4a74 3%, #166291 4%, #2292d4 98%, #42aee6 100%);
+/* Firefox 3.6+ */
+background: -moz-linear-gradient(bottom, #0e4a74 3%, #166291 4%, #2292d4 98%, #42aee6 100%);
+/* IE 10 */
+background: -ms-linear-gradient(bottom, #0e4a74 3%, #166291 4%, #2292d4 98%, #42aee6 100%);
+/* Opera 11.10+ */
+background: -o-linear-gradient(bottom, #0e4a74 3%, #166291 4%, #2292d4 98%, #42aee6 100%);
+}
+#intro_logo {
+cursor: pointer;
+width:3.3em;
+height: 2.6em;
+position:relative;
+top: -0.37em;
+left: 0.6em;
+}
+}
+#intro_app_logo {
+display: none;
+background-image: url("/myfritz/css/default/images/app_icon.png");
+background-position: center;
+background-repeat: no-repeat;
+background-size: 2.6em 2.6em;
+cursor: pointer;
+width: 2.6em;
+height: 2.6em;
+position:relative;
+top: -0.37em;
+left: 0.6em;
+}
+/* Mobile */
+@media (max-width: 759px) {
+#intro_app_logo {
+display: inline-block;
+}
+#intro_logo {
+display: none;
+}
+}
+@media (min-width: 760px) and (max-width: 1024px) {
+/*für Tablet und kleine Dektops*/
+#intro_box {
+position: fixed;
+top: 0;
+z-index: 100;
+width: 100%;
+}
+#intro_app_logo {
+display: inline-block;
+}
+#intro_logo {
+display: none;
+}
+}
+@media (min-width: 1025px) {
+#intro_box {
+padding: 1.45em 1em 0.5em;
+}
+#intro_bar {
+margin: 0;
+padding: 0 1em;
+height: 2.83em;
+/*+++ Farbverlauf ++++*/
+/* IE kleiner 9 und alte andere Browser */
+background-color: #478dd0;
+/* IE 9 geht zwar ein verlauf aber der schaut dann aus den Runden ecken vor daher nur normaler Hintergrund*/
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80b0e0', endColorstr='#2269a8', GradientType=0);
+/* Safari 5.1+, Chrome 10+ */
+background: -webkit-linear-gradient(top, #70a0d0 10%, #5598d5 42%, #4088d0 53%, #3075b2 90%, #2269a8 100%);
+/* Firefox 3.6+ */
+background: -moz-linear-gradient(top, #70a0d0 10%, #5598d5 42%, #4088d0 53%, #3075b2 90%, #2269a8 100%);
+/* IE 10 */
+background: -ms-linear-gradient(top, #70a0d0 10%, #5598d5 42%, #4088d0 53%, #3075b2 90%, #2269a8 100%);
+/* Opera 11.10+ */
+background: -o-linear-gradient(top, #70a0d0 10%, #5598d5 42%, #4088d0 53%, #3075b2 90%, #2269a8 100%);
+/*+++ Runde Ecken ++++*/
+border-radius: 0.8em;
+}
+#intro_logo {
+display: inline-block;
+width: 5.78em;
+height: 4.55em;
+position: relative;
+top: -1.35em;
+left: 0.7em;
+}
+#intro_app_logo {
+display: none;
+}
+}
+#intro_logo_link {
+display: inline-block;
+position: relative;
+z-index: 100;
+height: 2.83em;
+width: 2.83em;
+float: left;
+}
+#intro_title_box {
+display: inline-block;
+background-image: url("/myfritz/css/default/images/myfritz.png");
+background-position: center;
+background-size: 9.44em 4.15em;
+background-repeat: no-repeat;
+width: 100%;
+height: 1.9em;
+position: relative;
+top: 0.45em;
+}
+#intro_boxinfo {
+display: none;
+}
+#intro_menu_box {
+cursor: pointer;
+display: block;
+float: right;
+}
+#intro_menu_box div {
+background-color: #ffffff;
+margin: 0.75mm 6mm;
+width: 1.75mm;
+height: 1.75mm;
+}
+@media (max-width: 759px) {
+/*für mobile Ansicht*/
+#intro_box {
+position: relative;
+z-index: 10;
+}
+#intro_title_box {
+background-position: top -0.4em left 3.5em;
+background-size: 6.11em 2.69em;
+}
+}
+@media (min-width: 760px) {
+#intro_boxinfo {
+display: block;
+font-size:66%;
+position:relative;
+top:-0.4em;
+width:16.5em;
+float:right;
+padding:0;
+margin:0;
+color:#ffffff;
+}
+#intro_boxinfo p {
+margin: 0;
+padding: 0.4em 0.4em 0;
+text-align:right;
+}
+#intro_menu_box {
+display: none;
+}
+}
+/****************** ENDE Blauer Balken ******************/
+/****************** Navigation ******************/
+/*Höhe der nav_box muss ermittelbar sein. Daher darf innerhalb der Navigation kein margin top oder bottom genutzt werden!!! */
+#nav_link_box a {
+text-decoration: none;
+vertical-align: top;
+color: #003365;
+display: inline-block;
+padding: 0.1em 0 0.1em 0;
+font-weight: bold;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+.nav_link_selected {
+color: #003365;
+border-bottom: 0.15em solid #4b8ac4;
+}
+#nav_link_box a:hover,
+#nav_link_box a:active {
+color: #4b8ac4;
+}
+#nav_link_box a.nav_link_selected:hover,
+#nav_link_box a.nav_link_selected:active {
+color: #003365;
+}
+/* MOBILE */
+@media (max-width: 759px) {
+#nav_box {
+display: none;
+}
+#nav_box.show {
+display: block;
+position: relative;
+z-index: 150;
+}
+#nav_link_box {
+position: fixed;
+width: 10em;
+top: 2.85em;
+right: 0;
+text-align: right;
+margin: 0;
+color: #ffffff;
+padding: 0.2em 0.6em 0;
+background-color: rgba(34,105,168,0.9); /*#2269a8*/
+}
+#nav_link_box a {
+display: block;
+text-decoration: none;
+vertical-align: top;
+padding: 0.1em 0 0.1em 0;
+color: #ffffff;
+font-weight: bold;
+}
+#nav_link_box a:hover,
+#nav_link_box a:active,
+#nav_link_box a.nav_link_selected,
+#nav_link_box a.nav_link_selected:hover,
+#nav_link_box a.nav_link_selected:active {
+color: #b0d0f0;
+border: none;
+}
+}
+/* Tablet */
+@media (min-width: 760px) and (max-width: 1024px) {
+#nav_box {
+position: fixed;
+z-index: 150;
+top: 2.83em;
+height: 2.2em;
+font-size: 100%;
+width: 100%;
+}
+#nav_link_box {
+text-align: right;
+color: #003365;
+white-space: nowrap;
+padding: 0.5em 1em 0.1em 1em;
+}
+#nav_link_box a {
+font-size: 90%;
+}
+}
+/* DESKTOP */
+@media (min-width: 1025px) {
+#nav_box {
+font-size: 100%;
+padding: 0.5em 1em;
+}
+#nav_link_box {
+text-align: right;
+color: #003365;
+white-space: nowrap;
+padding: 0em 1em 0 1em;
+}
+#nav_link_box a {
+font-size: 80%;
+padding: 0.275em 0.4em 0.1em 0.4em;
+}
+.nav_link_selected {
+border-bottom: 0.65mm solid #4b8ac4;
+}
+}
+/****************** ENDE Navigation ******************/
+/****************** Seiten Inhalt ******************/
+.area_head div {
+display: inline-block;
+text-align: right;
+width: 29%;
+}
+.area_head div:first-child {
+width: 69%;
+text-align: left;
+}
+.hide .area_head div:first-child {
+width: 100%;
+}
+.area_head div h2 {
+font-size:100%;
+padding-left:0.5em;
+padding-top: 0.2em;
+margin:0;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+.wait_state {
+background-image: url(/myfritz/css/default/images/please_wait_bright.gif);
+background-position: center;
+background-repeat: no-repeat;
+}
+.area_head div.details {
+display: none;
+}
+.area_overview {
+display: none;
+}
+/* Mobile */
+@media (max-width: 759px) {
+#page_content {
+text-align: center;
+overflow-x: hidden;
+}
+.area_box {
+cursor: pointer;
+display: inline-block;
+vertical-align: top;
+text-align: left;
+width: 100%;
+background-position: center;
+background-repeat: no-repeat;
+}
+.area_box.show {
+cursor: auto;
+display: block;
+width: auto;
+height: auto;
+margin: 0;
+border: none;
+border-radius: 0;
+}
+.area_overview {
+position: relative;
+display: block;
+margin: 0.3em 0.3em 0 0.3em;
+height: 4.5em;
+font-size: 90%;
+background-position: left;
+background-repeat: no-repeat;
+background-size: 22em 4.5em;
+overflow: hidden;
+}
+.area_box.show .area_overview {
+display: none;
+}
+.area_ov_icon {
+position: absolute;
+top: 0;
+left: 0;
+height: 3em;
+width: 4.5em;
+background-position: center;
+background-size: 70%;
+background-repeat: no-repeat;
+}
+.area_ov_indicator {
+position: absolute;
+top: 0;
+left: 4.5em;
+height: 3em;
+width: 3.5em;
+}
+.area_ov_name {
+position: absolute;
+top: 3em;
+left: 0;
+height: 1.5em;
+width: 8.3em;
+/*Hiermit werden die Ecken eines Div abgeschrägt. Zumindest optisch.*/
+background-position: top right;
+background: linear-gradient(221deg, transparent 0.6em, rgba(0,0,0,0.35) 0);
+background: -moz-linear-gradient(221deg, transparent 0.6em, rgba(0,0,0,0.35) 0);
+background: -o-linear-gradient(221deg, transparent 0.6em, rgba(0,0,0,0.35) 0);
+background: -webkit-linear-gradient(221deg, transparent 0.6em, rgba(0,0,0,0.35) 0);
+background: -ms-linear-gradient(221deg, transparent 0.6em, rgba(0,0,0,0.35) 0);
+}
+.area_ov_name p {
+color: #ffffff;
+margin: 0.2em 0.3em;
+font-size: 95%;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+.area_ov_content {
+margin: 0 0.3em 0 8.4em;
+height: 4.5em;
+}
+.area_box.hide {
+display: none;
+}
+.area_head {
+display: none;
+}
+.area_head.show {
+display: block;
+/* Comming Soon. Wird derzeit noch nicht unterstützt sollte aber genutzt werden sobald möglich.
+position: -webkit-sticky;
+position: -moz-sticky;
+position: -ms-sticky;
+position: -o-sticky;
+position: sticky;
+top: 0.833em;
+*/
+border-collapse: collapse;
+border: 0.06em solid #2690d0;
+border-left: 0;
+border-right: 0;
+width: 100%;
+height: 1.6em;
+background-color: #2690d0;
+margin:0;
+color: #aadfff;
+}
+#fakeAreaHead.area_head.show {
+position: fixed;
+top: 0;
+cursor: pointer;
+}
+.area_content {
+display: none;
+}
+/*Damit der Wartekribgel bei Mobiler Ansicht nicht 2 mal erscheint*/
+.area_content.wait_state {
+background-image: none;
+}
+.area_content.show {
+display: block;
+}
+.area_foot {
+display: block;
+position: absolute;
+width: 100%;
+height: 4.8em;
+font-size: 90%;
+z-index: 100;
+}
+.show .area_foot {
+display: none;
+}
+}
+/* Tablet */
+@media (min-width: 760px) and (max-width: 1024px) {
+body {
+overflow-y: hidden;
+}
+body.show {
+overflow-y: auto;
+}
+#page_content {
+position: relative;
+top: 5.03em;
+padding: 0 1em 0 1em;
+text-align: left;
+overflow-x: hidden;
+overflow-y: auto;
+}
+#page_content.show{
+overflow: hidden;
+padding: 0 1em 3.06em 1em;
+}
+.area_box {
+position: absolute;
+vertical-align: top;
+width: 18em;
+height: auto;
+margin: 0.5em;
+padding-bottom: 0.33em;
+border: 0.06em solid #8DA4A3;
+border-top: 0.06em solid #90c0e8;
+border-radius: 0.6em;
+text-align: left;
+}
+.area_box.show {
+cursor: auto;
+}
+.area_box.show.single_area {
+position: static;
+width: auto;
+max-width: 28em;
+margin: auto;
+}
+.area_box.hide {
+position: fixed;
+cursor: pointer;
+width: 11em;
+padding-bottom: 0;
+background-color: #eeeeee;
+}
+.area_head {
+border: none;
+border-radius: 0.6em 0.6em 0 0;
+width: 100%;
+height: 1.6em;
+margin:0;
+color: #3f464c;
+/* IE kleiner 9 und alte andere Browser */
+background-color: #add1f1;
+/* IE 9 geht zwar ein verlauf aber der schaut dann aus den Runden ecken vor daher nur normaler Hintergrund*/
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c0e0ff', endColorstr='#90c0e8', GradientType=0);
+/* Safari 5.1+, Chrome 10+ */
+background: -webkit-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+/* Firefox 3.6+ */
+background: -moz-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+/* IE 10 */
+background: -ms-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+/* Opera 11.10+ */
+background: -o-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+}
+.hide .area_head {
+border-radius: 0.6em;
+color: #3f464c;
+/* IE kleiner 9 und alte andere Browser */
+background-color: #579de0;
+/* IE 9 geht zwar ein verlauf aber der schaut dann aus den Runden ecken vor daher nur normaler Hintergrund*/
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80b0e0', endColorstr='#3279b8', GradientType=0);
+/* Safari 5.1+, Chrome 10+ */
+background: -webkit-linear-gradient(top, #80b0e0 10%, #65a8e5 42%, #5098e0 53%, #4085c2 90%, #3279b8 100%);
+/* Firefox 3.6+ */
+background: -moz-linear-gradient(top, #80b0e0 10%, #65a8e5 42%, #5098e0 53%, #4085c2 90%, #3279b8 100%);
+/* IE 10 */
+background: -ms-linear-gradient(top, #80b0e0 10%, #65a8e5 42%, #5098e0 53%, #4085c2 90%, #3279b8 100%);
+/* Opera 11.10+ */
+background: -o-linear-gradient(top, #80b0e0 10%, #65a8e5 42%, #5098e0 53%, #4085c2 90%, #3279b8 100%);
+}
+.area_content {
+overflow-x: hidden;
+overflow-y: auto;
+height: 10em;
+border-radius: 0 0 0.6em 0.6em;
+}
+.area_content.show {
+height: 100%;
+min-height: 10em;
+}
+.hide .area_content {
+display: none;
+}
+.area_foot {
+display: block;
+cursor: pointer;
+position: absolute;
+top: 0;
+left: 0;
+z-index: 100;
+height: 1.6em;
+width: 100%;
+border-radius: 0 0 0.6em 0.6em;
+}
+.area_foot div {
+display: none;
+}
+.area_foot.show {
+display: none;
+}
+#fakeArea {
+cursor: default;
+}
+#fakeArea .area_head {
+color: #3f464c;
+/* IE kleiner 9 und alte andere Browser */
+background-color: #add1f1;
+/* IE 9 geht zwar ein verlauf aber der schaut dann aus den Runden ecken vor daher nur normaler Hintergrund*/
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c0e0ff', endColorstr='#90c0e8', GradientType=0);
+/* Safari 5.1+, Chrome 10+ */
+background: -webkit-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+/* Firefox 3.6+ */
+background: -moz-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+/* IE 10 */
+background: -ms-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+/* Opera 11.10+ */
+background: -o-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+margin:0;
+border-radius: 0.6em;
+}
+.area_head div.details {
+position: relative;
+top: -0.14em;
+display: inline-block;
+width: 28%;
+padding: 0;
+}
+.area_head div.details div {
+display: inline-block;
+vertical-align: middle;
+width: 1.3mm;
+height: 1.3mm;
+border-radius: 0.65mm;
+margin: 1.5mm 1mm 0 0;
+background-color: #3f464c;
+}
+.area_box.hide div.details,
+.area_box.show div.details {
+display: none;
+}
+.area_content.hide {
+display: none;
+}
+}
+/* Desktop*/
+@media (min-width: 1025px) {
+body {
+overflow-y: hidden;
+}
+#page_content {
+position: relative;
+padding: 0 2em 0 2em;
+text-align: left;
+overflow-x: hidden;
+overflow-y: auto;
+}
+.area_box {
+position: absolute;
+vertical-align: top;
+width: 18em;
+height: auto;
+margin: 0.5em;
+padding-bottom: 0.33em;
+border: 0.06em solid #8DA4A3;
+border-top: 0.06em solid #90c0e8;
+border-radius: 0.6em;
+text-align: left;
+background-color: #ffffff;
+}
+.area_head {
+border: none;
+border-radius: 0.6em 0.6em 0 0;
+width: 100%;
+height: 1.6em;
+/* IE kleiner 9 und alte andere Browser */
+background-color: #add1f1;
+/* IE 9 geht zwar ein verlauf aber der schaut dann aus den Runden ecken vor daher nur normaler Hintergrund*/
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c0e0ff', endColorstr='#90c0e8', GradientType=0);
+/* Safari 5.1+, Chrome 10+ */
+background: -webkit-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+/* Firefox 3.6+ */
+background: -moz-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+/* IE 10 */
+background: -ms-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+/* Opera 11.10+ */
+background: -o-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+margin:0;
+}
+.area_content {
+overflow-x: hidden;
+overflow-y: auto;
+height: 12em;
+border: none;
+border-radius: 0 0 0.6em 0.6em;
+}
+.area_foot {
+display: none;
+}
+}
+/****************** ENDE Seiten Inhalt ******************/
+/****************** Items ******************/
+.downloadLink {
+position: fixed;
+top: -1000cm;
+left: -1000cm;
+}
+.emtyItem,
+.item {
+padding: 0.4em;
+margin: 0;
+border-bottom: 0.06em #e0e0e0 solid;
+cursor: pointer;
+}
+.item.notClickable {
+cursor: auto;
+}
+.emtyItem {
+cursor: auto;
+}
+.item p,
+.item a {
+display: inline-block;
+font-size: 90%;
+font-weight: normal;
+margin: 0.5mm 0;
+overflow: hidden;
+text-overflow: ellipsis;
+vertical-align: middle;
+white-space: nowrap;
+width: 90%;
+}
+.item a,
+.item a:visited {
+text-decoration: none;
+color: #003365;
+}
+.item a:hover {
+color: #3080C8;
+}
+.item div {
+display: inline-block;
+vertical-align: middle;
+width: 100%;
+}
+.item div.details {
+display: none;
+padding: 0.1em 0 0 1em;
+width: auto;
+}
+.item div.details.show {
+display: block;
+}
+/****************** ENDE Items ******************/
+/****************** OVERVIEW ******************/
+.area_overview table {
+width: 100%;
+margin: 0.45em 0 0 0;
+padding: 0;
+border: 0;
+border-collapse: collapse;
+table-layout: fixed;
+}
+.area_overview td {
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+text-align: right;
+font-size: 100%;
+font-weight: normal;
+margin: 0;
+padding: 0;
+border: 0;
+}
+.area_overview td:nth-child(1) {
+text-align: left;
+}
+/****************** ENDE OVERVIEW ******************/
+/****************** FOOT ******************/
+/*Höhe der foot_box muss ermittelbar sein. Daher darf innerhalb des Footer kein margin top oder bottom genutzt werden!!! */
+.areaPagination {
+display: none;
+}
+#nav_box,
+#foot_box {
+background-color: rgba(241,246,249,0.85); /*#f1f6f9*/
+}
+#foot_link_box a {
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+/*Mobile*/
+@media (max-width: 759px) {
+#foot_box {
+display: block;
+position: relative;
+z-index: 150;
+}
+#foot_link_box {
+display: none;
+}
+#foot_box.show #foot_link_box {
+display: block;
+position: fixed;
+top: 12.05em;
+right: 0;
+text-align: right;
+padding: 0 0.6em 0.2em;
+width: 10em;
+background-color: rgba(34,105,168,0.9); /*#2269a8*/
+}
+#foot_link_box a {
+display: block;
+text-decoration: none;
+vertical-align: top;
+padding: 0.1em 0 0.1em 0;
+color: #ffffff;
+font-weight: bold;
+}
+#foot_link_box a:hover,
+#foot_link_box a:active {
+color: #b0d0f0;
+}
+.del_link {
+/*display: none;*/
+}
+.areaPagination {
+position: fixed;
+bottom: 0;
+width: 100%;
+background-color: rgba(241,246,249,0.85); /*#f1f6f9*/
+display: block;
+text-align: center;
+vertical-align: middle;
+}
+.areaPagination div {
+display: inline-block;
+vertical-align: middle;
+padding: 2mm 0 3mm 0;
+}
+.areaPagination div div {
+vertical-align: middle;
+width: 1.6mm;
+height: 1.6mm;
+border-radius: 0.8mm;
+margin: 0 5mm;
+background-color: #aaaaaa;
+padding: 0;
+}
+.areaPagination div.show div {
+background-color: #2292d4;
+width: 2.25mm;
+height: 2.25mm;
+border-radius: 1.175mm;
+}
+.areaPagination .switch {
+cursor: pointer;
+}
+.areaPagination .switch.show {
+cursor: auto;
+}
+}
+@media (min-width: 760px) and (max-width: 1024px) {
+#foot_box {
+position: fixed;
+z-index: 100;
+bottom: 0;
+width: 100%;
+}
+#foot_link_box {
+text-align: right;
+padding: 1em;
+}
+#foot_link_box a {
+color: #808080;
+font-weight: normal;
+text-decoration: none;
+font-size: 90%;
+}
+}
+/*Desktop*/
+@media (min-width: 1025px) {
+#nav_box,
+#foot_box {
+background-color: transparent;
+}
+#foot_box {
+padding: 1em;
+}
+#foot_link_box {
+text-align: right;
+padding: 0 0.5em;
+font-size: 90%;
+width: auto;
+}
+#foot_link_box a {
+color: #808080;
+font-size: 80%;
+font-weight: normal;
+text-decoration: none;
+color: #003365;
+}
+#foot_link_box a:hover {
+text-decoration: underline;
+}
+}
+/****************** ENDE FOOT ******************/

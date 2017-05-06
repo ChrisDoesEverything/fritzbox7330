@@ -1,0 +1,21 @@
+div.scroll_area {
+height: 400px;
+overflow: auto;
+background: #FFF;
+border: 1px solid #C6C7BE;
+clear:left;
+}
+div.scroll_area table {
+border: 0;
+margin: 0;
+}
+div.scroll_area td {
+vertical-align: top;
+padding: 2px;
+}
+div.scroll_area td.date {
+padding: 2px 12px;
+}
+div.scroll_area a {
+color: #000;
+}

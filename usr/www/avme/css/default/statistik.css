@@ -1,0 +1,72 @@
+table {
+width: auto;
+background-color: transparent;
+border: 0;
+float: left;
+margin-right: 50px;
+}
+td
+{
+padding: 0;
+}
+.td24StundenDiagram
+{
+width: 502px;
+background-position: left center;
+background-image:url(images/Back24_4.gif);
+background-repeat: no-repeat;
+table-layout: fixed;
+border: 0;
+}
+span.redline {
+position:absolute;
+display:inline-block;
+height: 1px;
+width: 482px;
+background-color: red;
+}
+.ram_legend
+{
+margin-top: 15px;
+}
+.tdRamLegende img
+{
+height: 10px;
+width: 15px;
+}
+.tdXAchse
+{
+text-align:center;
+padding-left:0px;
+color:#9cadbd;
+font-size:80%;
+}
+.tdYAchse
+{
+text-align:center;
+color:#9cadbd;
+}
+.tdYAchseDist
+{
+width:0px;
+}
+.Bar_black{background-color:#80967b;font-size: 0; }
+.Bar1{background: url(images/balkeneinheit24-gruen.gif) center top repeat-y;font-size: 0; }
+.Bar2{background: url(images/balkeneinheit24.gif) center top repeat-y;font-size: 0; }
+.Bar3{background: url(images/balkeneinheit24-blau.gif) center top repeat-y; font-size: 0; }
+.MasterBarRam{position:relative; bottom: 0px; left: 0px;height:77px; width:10px;}
+.MasterBarTemperature{position:relative; bottom: 0px; left: 0px;height:77px; width:1px;}
+.MasterBarCpu{position:relative; bottom: 0px; left: 0px;height:77px; width:1px;}
+.stat_top,
+.stat_bottom {
+font-size: 11px;
+}
+.stat_top {
+margin-bottom: 0;
+}
+.stat_bottom {
+clear: both;
+text-align: right;
+padding-right: 250px;
+margin-top: 4px;
+}

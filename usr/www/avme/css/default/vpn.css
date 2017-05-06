@@ -1,0 +1,34 @@
+table.zebra {
+table-layout: fixed;
+}
+th {
+padding: 2px 2px;
+vertical-align: top;
+overflow: hidden;
+border-style: none;
+}
+td {
+padding: 2px 2px;
+vertical-align: middle;
+overflow: hidden;
+border-style: none;
+}
+th.active { text-align:center; width: 30px;}
+td.active { text-align:center; width: 30px;}
+th.name { text-align: left; width: 186px;}
+td.name { text-align: left; width: 186px;}
+th.remote_ip { text-align: left; width: 120px;}
+td.remote_ip { text-align: left; width: 120px;}
+th.src { text-align: left; width: 120px;}
+td.src { text-align: left; width: 120px;}
+th.dst { text-align: left; width: 120px;}
+td.dst { text-align: left; width: 120px;}
+th.state { text-align:center; width: 50px;}
+td.state { text-align:center; width: 50px;}
+th.button_row,
+td.button_row {
+text-align: right;
+width: 40px;
+padding-left: 0px;
+padding-right: 0px;
+}

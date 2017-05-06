@@ -1,0 +1,23 @@
+<!-- de-first -begin -->
+<div id="sub_menu_head" >
+<?lua
+box.out([[<div class="sm_iefix">]])
+if gl.logged_in and gl.show_logout then
+require"sso_dropdown"
+sso_dropdown.init{
+logout_link=href.get("/home/home.lua", "logout=1"),
+email_link=href.get("/sso_editmyself.lua", "own_email=", "back_to_page=/home/home.lua"),
+password_link=href.get("/sso_editmyself.lua", "own_password=", "back_to_page=/home/home.lua")
+}
+sso_dropdown.write_head()
+sso_dropdown.write_list()
+box.out([[ | ]])
+end
+box.out([[<a class="sm_link_selected sm_link_bold" href="]]..href.get_zone_link('box')..[["><span>]]..box.tohtml([[{?86:321?}]])..[[</span></a>]])
+if (config.NAS) then
+box.out([[ | <a class="sm_link_bold" href="]]..href.get_zone_link('nas')..[[">]]..box.tohtml([[{?86:667?}]])..[[</a>]])
+end
+box.out([[ | <a class="sm_link_bold" href="]]..href.get_zone_link('myfritz')..[[">]]..box.tohtml([[{?86:832?}]])..[[</a>]])
+box.out([[ | <a target="_blank" href="]]..href.help_main()..[[" onclick="help.popup(']]..href.help_main('hide=yes')..[['); return false;" title="]]..box.tohtml([[{?txtHelp?}]])..[[" class="nocancel iconHelp"><img alt="" src="/css/default/images/icon_hilfe.png"></a></div>]])
+?>
+</div>

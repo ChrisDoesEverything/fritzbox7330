@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<list>
+  <mediadefaults oem="avme">
+      <domain name="mediadefaults">
+        <pool name="webradio">
+        </pool>
+      <pool name="rss">
+      </pool>
+      <pool name="podcast">
+      </pool>
+    </domain>
+  </mediadefaults>
+  <mediadefaults>
+      <domain name="mediadefaults">
+        <pool name="webradio">
+          <entry id="0" name="Deutschlandfunk" url="http://www.dradio.de/streaming/dlf.m3u" />
+          <entry id="1" name="DRadio Kultur" url="http://www.dradio.de/streaming/dkultur.m3u" />
+          <entry id="2" name="DRadio Wissen" url="http://www.dradio.de/streaming/dradiowissen.m3u" />
+          <entry id="3" name="Eins Live Diggi" url="http://www.wdr.de/wdrlive/media/einslivedigi.m3u" />
+          <entry id="4" name="radioeins" url="http://www.radioeins.de/live.m3u" />
+          <entry id="5" name="Radio Fritz" url="http://www.fritz.de/live.m3u" />
+          <entry id="6" name="Sputnik Livestream" url="http://www.sputnik.de/m3u/live.hi.m3u" />
+          <entry id="7" name="Swissgroove" url="http://www.swissgroove.ch/listen.php" />
+         </pool>
+      <pool name="rss">
+        <entry id="0" name="AVM.de" url="http://www.avm.de/de/Extern/RSS/rss.xml" poll="1200" mwi="0" />
+        <entry id="1" name="Heute um 20:15 Uhr im TV" url="http://www.tvspielfilm.de/tv-programm/rss/heute2015.xml" poll="1200" mwi="0" />
+        <entry id="2" name="Kino.de - Movienews" url="http://www.kino.de/rss.php4?typ=movienews" poll="1200" mwi="0" />
+        <entry id="3" name="Spiegel.de - Panorama" url="http://www.spiegel.de/panorama/index.rss" poll="1200" mwi="0" />
+        <entry id="4" name="Sport1 - News" url="http://www.sport1.de/de_1/startseite/rss.xml" poll="1200" mwi="0" />
+        <entry id="5" name="Tagesschau.de" url="http://www.tagesschau.de/xml/rss2" poll="1200" mwi="0" />
+        <entry id="6" name="Wetter.com" url="http://wetter.com/wetter_rss/wetter.xml" poll="1200" mwi="0" />
+        <entry id="7" name="ZDNet.de" url="http://www.zdnet.de/feeds/news/xml/rss_h5.xml.htm" poll="1200" mwi="0" />
+      </pool>
+      <pool name="podcast">
+        <entry id="0" name="Bayern 3 - Kino Kompakt" url="http://www.br-online.de/podcast/kino-kompakt/cast.xml" poll="1200" mwi="0" />
+        <entry id="1" name="radioeins - Die besten Interviews" url="http://www.radioeins.de/rss.xml?beitrag_143640" poll="1200" mwi="0" />
+        <entry id="2" name="Radio Fritz - Fritz Info Multimedia" url="http://www.fritz.de/podcast.xml?60_85317" poll="1200" mwi="0" />
+        <entry id="3" name="Tagesschau" url="http://www.tagesschau.de/export/podcast/tagesschau/#" poll="1200" mwi="0" />
+        <entry id="4" name="WDR 5 - Der satirische Wochenrückblick von Peter Zudeick" url="http://podcast.wdr.de/radio/wochenrueck.xml" poll="1200" mwi="0" />
+      </pool>
+    </domain>
+  </mediadefaults>
+</list>

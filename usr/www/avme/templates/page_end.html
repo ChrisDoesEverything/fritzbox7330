@@ -1,0 +1,28 @@
+<!-- de-first -begin -->
+<?lua if g_page_needs_js then box.out([[</div>]]) end ?>
+<p id="page_needs_js_txt" <?lua if not(g_page_needs_js) then box.out([[style="display:none;"]]) end ?>>
+{?3675:124?}
+</p>
+<span id="uiLuatime"></span>
+</div>
+<div class="clear_float"></div>
+</div>
+</div>
+<?lua
+g_menu_file = ""
+if g_page_type == "all" or g_page_type == "wizard" then
+g_menu_file = "templates/menu_page_end.html"
+end
+?>
+<?include g_menu_file ?>
+</div>
+<?lua
+if g_page_needs_js then
+box.out("\n", [[
+<script type="text/javascript">
+jxl.hide("page_needs_js_txt");
+jxl.show("page_needs_js_box");
+</script>
+]])
+end
+?>

@@ -1,0 +1,18 @@
+<? include tools/static_html_head.html ?>
+<? include tools/static_page_head.html ?>
+<div class="blue_bar_back">
+<h2>{?147:569?}</h2>
+</div>
+<div id="page_content" class="page_content">
+<h4>{?147:364?}</h4>
+<p>{?147:93?}</p>
+<p class="ErrorMsg"><? STATUS ?></p>
+<form method="GET" action="/system/import.lua">
+<input type="hidden" name="sid" value="<? SID ?>">
+<input type="hidden" name="cfg_nok" value="">
+<div id="btn_form_foot">
+<button type="submit" name="cfg_nok">{?txtBack?}</button>
+</div>
+</form>
+</div>
+<? include tools/static_foot.html ?>

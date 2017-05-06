@@ -1,0 +1,79 @@
+<? include tools/static_html_head.html ?>
+<script type="text/javascript" src="/js/jxl.js"></script>
+<script type="text/javascript" src="/js/ajax.js"></script>
+<script type="text/javascript" src="/js/fritztris.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/default/fritztris.css"/>
+<script type="text/javascript">
+var game = null;
+var code = "";
+var ready = false;
+function play() {
+game = new FRITZtris(document.getElementById("game"));
+game.start();
+game.gameOverCb = gameOver;
+}
+function onKeyPress(ev) {
+code += String.fromCharCode(ev.charCode);
+if (code.indexOf('play') !== -1) {
+code = "";
+if (game) {
+game.stop();
+game = null;
+}
+play();
+}
+}
+function goToBox() {
+top.location.href = "/";
+}
+function gameOver() {
+if (ready) {
+alert("Sie werden jetzt auf die Übersichtsseite der FRITZ!Box weitergeleitet.");
+goToBox();
+} else {
+alert("Das Spiel ist vorbei.");
+game.stop();
+game = null;
+}
+}
+function boxReady() {
+ready = true;
+if (game) {
+if (confirm("Sie werden jetzt auf die Übersichtsseite der FRITZ!Box weitergeleitet.\n\nWenn Sie noch zu Ende spielen wollen, dann klicken Sie auf 'Abbrechen'.")) {
+goToBox();
+}
+} else {
+goToBox();
+}
+}
+function init() {
+jxl.hide("blink");
+jxl.hide("btn_form_foot");
+jxl.setHtml("forward",
+"<p class=\"waitimg\"><img src=\"/css/default/images/wait.gif\"></p>"+
+"<p>{?367:548?}</p>");
+ajaxWaitForBox(boxReady);
+if (window.addEventListener) {
+window.addEventListener('keypress', onKeyPress, false);
+}
+}
+window.onload = init;
+</script>
+<? include tools/static_page_head.html ?>
+<div class="blue_bar_back">
+<h2>{?367:963?}</h2>
+</div>
+<div id="page_content" class="page_content">
+<p>{?187:198?}</p>
+<div id="forward"></div>
+<h4>{?351:326?}</h4>
+<p>{?829:707?}</p>
+<p id="blink">{?9420:147?}</p>
+<form method="GET" action="/">
+<div id="btn_form_foot">
+<button type="submit">{?txtToOverview?}</button>
+</div>
+</form>
+<div id="game"></div>
+</div>
+<? include tools/static_foot.html ?>

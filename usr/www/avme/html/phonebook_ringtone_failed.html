@@ -1,0 +1,35 @@
+<? include tools/static_html_head.html ?>
+<style type="text/css">
+</style>
+<script type="text/javascript" src="/js/cookie.js"></script>
+<script type="text/javascript">
+function goBack() {
+var backToPage = readCookie("backtopage");
+if (backToPage) {
+backToPage += "&sid=<? SID ?>";
+}
+if (!backToPage) {
+backToPage = "/home/home.lua?sid=<? SID ?>";
+}
+eraseCookie("backtopage");
+location.href = backToPage;
+}
+</script>
+<? include tools/static_page_head.html ?>
+<div class="blue_bar_back">
+<h2>{?gTxtFritzBox?}</h2>
+</div>
+<div id="page_content" class="page_content">
+<form method="GET" name="mainform" action="/dect/dect_list.lua" onsubmit="goBack();return false;">
+<p>
+{?3135:648?}
+<br>
+(<?STATUS?>)
+</p>
+<input type="hidden" name="sid" value="<? SID ?>">
+<div id="btn_form_foot">
+<button type="submit" name="btnLogin">{?txtApplyOk?}</button>
+</div>
+</form>
+</div>
+<? include tools/static_foot.html ?>

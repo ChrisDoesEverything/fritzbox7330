@@ -1,0 +1,80 @@
+<?lua write_help_head([[{?425:355?}]]) ?>
+<P>{?425:164?}</p>
+<h3>{?425:215?}</h3>
+<p>
+<?lua
+require"general"
+local txt = [[{?425:5216?}]]
+txt = general.sprintf(txt, '<a class="boxlink" href="' .. href.get("/assis/home.lua") .. '">', '</a>')
+box.out(txt)
+?>
+</p>
+<p>
+<?lua
+require"general"
+local txt = [[{?425:763?}]]
+txt = general.sprintf(txt, '<a class="boxlink" href="' .. href.get("/system/syslog.lua") .. '">', '</a>')
+box.out(txt)
+?>
+{?425:903?}
+</p>
+<P>{?425:606?}</P>
+<?lua
+require"utf8"
+require"menu"
+local g_txt = {
+{ href = "hilfe_system_user.html", text = [[{?425:372?}]] },
+{ href = "hilfe_ipsetting.html", text = [[{?425:339?}]] },
+{ href = "hilfe_system_export.html", text = [[{?425:178?}]] },
+{ href = "hilfe_system_import.html", text = [[{?425:844?}]] },
+{ href = "hilfe_ipsetting.html", text = [[{?425:748?}]] },
+{ href = "hilfe_system_export.html", text = [[{?425:7941?}]] },
+{ href = "hilfe_syslog.html", text = [[{?425:833?}]] },
+{ href = "hilfe_syslog.html", text = [[{?425:887?}]] },
+{ href = "hilfe_system_user.html", text = [[{?425:899?}]] },
+{ href = "hilfe_system_user.html", text = [[{?425:20?}]] },
+{ href = "hilfe_syslog.html", text = [[{?425:366?}]] },
+{ href = "hilfe_system_user.html", text = [[{?425:348?}]] },
+{ href = "hilfe_internet_zugangsdaten.html", text = [[{?425:28?}]]
+},
+{ href = "hilfe_internet_zugangsdaten.html", text = [[{?425:567?}]]
+},
+{ href = "hilfe_system_import.html", text = [[{?425:255?}]] },
+{ href = "hilfe_kindersicherung_einstellungen.html", text = [[{?425:163?}]] },
+{ href = "hilfe_kindersicherung_onlinezaehler.html", text = [[{?425:125?}]] },
+{ href = "hilfe_kindersicherung_uebersicht.html", text = [[{?425:533?}]] },
+{ href = "hilfe_kindersicherung_einstellungen.html", text = [[{?425:104?}]] },
+{ href = "hilfe_kindersicherung_uebersicht.html", text = [[{?425:406?}]] },
+{ href = "hilfe_kindersicherung_einstellungen.html", text = [[{?425:822?}]] },
+{ href = "rechtliche_hinweise.html", text = [[{?425:418?}]] },
+{ href = "rechtliche_hinweise.html", text = [[{?425:410?}]] },
+{ href = "rechtliche_hinweise.html", text = [[{?425:80?}]] },
+{ href = "rechtliche_hinweise.html", text = [[{?425:130?}]] },
+{ href = "rechtliche_hinweise.html", text = [[{?425:720?}]] }
+}
+local function write_head(char)
+box.out('<h2>')
+box.html(char)
+box.out('</h2>')
+end
+local function write_link(txt_obj)
+box.out('<p><a href="')
+href.help_write(txt_obj.href, 'offline=yes')
+box.out('">')
+box.html(txt_obj.text)
+box.out('</a></p>')
+end
+--Los Gehts
+if g_txt then
+utf8.sort(g_txt, function(o) return o.text end)
+local last_first_char = ""
+for i = 1, #g_txt do
+local first_char = utf8.first_char(g_txt[i].text)
+if last_first_char ~= first_char then
+write_head(first_char)
+last_first_char = first_char
+end
+write_link(g_txt[i])
+end
+end
+?>

@@ -1,0 +1,36 @@
+#! /bin/sh
+
+. /etc/init.d/rc.conf
+
+echo -e "Content-type: text/html; charset=iso-8859-1\n\n"
+
+echo -e "<html><body>\c"
+
+run_clock -c /dev/tffs/mtd3 -S
+echo -e "-`/etc/version -v | tr -d '.'`\c"
+echo -e "-`/etc/version --project`\c"
+echo -e "-${OEM}\c"
+if [ "${OEM}" = "avme" ] ; then
+    echo -e "-${Language}\c"
+fi
+##########################################################################
+# An alle Kollegen, die die Firmware der Fritz Boxen fuer 
+# lokale Entwicklungen modifizieren:
+##########################################################################
+# 
+# Seit so nett und hinterlasst euer Logo, und in Stichworten, welche
+# Modifikationen ihr durchgeführt habt. Ihr erleichtert den Nutzern
+# eurer Version das Leben.
+#
+# Im file /etc/version koennt ihr die Variable FIRMWARE_SUBVERSION modifizieren
+# hier koennt ihr eurer eigenen Subversion einen Namen geben
+#
+# export FIRMWARE_SUBVERSION=-Fritz-Build-77
+#
+###########################################################################
+# echo -e "<br>"
+# echo -e "Fritz der große Modifizierer"
+# echo -e "--- telnet demon aktiviert"
+# echo -e "<br>"
+
+echo -e "</body></html>\n"

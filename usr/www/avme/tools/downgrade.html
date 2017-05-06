@@ -1,0 +1,22 @@
+<? include tools/static_html_head.html ?>
+<? include tools/static_page_head.html ?>
+<div class="blue_bar_back">
+<h2>{?245:553?}</h2>
+</div>
+<div id="page_content" class="page_content">
+<h4>{?245:315?}</h4>
+<p>{?245:948?}</p>
+<form method="POST" action="/cgi-bin/firmwarecfg" enctype="multipart/form-data">
+<p>
+<input type="hidden" name="sid" value="<? SID ?>">
+<button type="submit" name="downgrade">{?245:434?}</button>
+</p>
+</form>
+<form method="POST" action="/cgi-bin/firmwarecfg" enctype="multipart/form-data">
+<p>
+<input type="hidden" name="sid" value="<? SID ?>">
+<button type="submit" name="reboot">{?245:917?}</button>
+</p>
+</form>
+</div>
+<? include tools/static_foot.html ?>

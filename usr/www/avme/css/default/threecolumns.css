@@ -1,0 +1,23 @@
+.columns_box {
+width:100%;
+margin:0;
+padding:0;
+overflow:hidden;
+}
+.columns_box span {
+padding-left: 10px;
+font-weight: bold;
+margin-bottom: 3px;
+}
+.column_part {
+float: left;
+width: 244px;
+display:inline-block;
+margin: 5px;
+vertical-align: top;
+}
+.columns_inner_box {
+border: 1px solid #c6c7be;
+background-color: #ffffff;
+padding: 5px;
+}

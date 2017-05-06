@@ -1,0 +1,28 @@
+<!-- de-first -begin -->
+</head>
+<body>
+<?lua box.out('<!-- pagename:'..box.glob.script..'-->') ?>
+<div class="popup_button_row popuphead">
+<?lua if not g_popup_nobuttons then
+box.out([[
+<button id="btn_print" onclick="window.print()">
+]])
+box.html([[{?printPageTxt?}]])
+box.out([[
+</button>
+]])
+box.out([[
+<button id="btn_close" onclick="window.close()">
+]])
+box.html([[{?closeWindowTxt?}]])
+box.out([[
+</button>
+]])
+end ?>
+</div>
+<div id="main_popup_page_all">
+<div id="<?lua box.out(g_content_id) ?>">
+<div id="contentTitle" class="blue_bar_back">
+<h2><?lua box.out(g_page_title) ?></h2>
+</div>
+<div id="page_content" class="page_content">

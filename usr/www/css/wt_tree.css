@@ -1,0 +1,80 @@
+* {
+  font-family : sans-serif
+}
+
+ul {
+  list-style-type : none
+}
+
+div {
+  margin-left : 20px
+}
+
+*.veryslow {
+  background-color : red;
+  color : white
+}
+
+*.slow {
+  background-color : yellow;
+  color : black
+}
+
+*.fast {
+  color : black
+}
+
+*.color00 {
+  background-color : white;
+  color : black
+}
+
+*.color01 {
+  background-color : #fdd;
+  color : black
+}
+
+*.color02 {
+  background-color : #faa;
+  color : black
+}
+
+*.color03 {
+  background-color : #f77;
+  color : black
+}
+
+*.color04 {
+  background-color : #f44;
+  color : black
+}
+
+*.color05 {
+  background-color : #f11;
+  color : black
+}
+
+*.color06 {
+  background-color : #d00;
+  color : white
+}
+
+*.color07 {
+  background-color : #a00;
+  color : white
+}
+
+*.color08 {
+  background-color : #700;
+  color : white
+}
+
+*.color09 {
+  background-color : #400;
+  color : white
+}
+
+*.color10 {
+  background-color : black;
+  color : white
+}

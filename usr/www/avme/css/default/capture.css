@@ -1,0 +1,19 @@
+table.zebra {
+width: 80%;
+margin: auto;
+}
+td.buttonrow,
+td.imgcol {
+width: 100px;
+}
+td.imgcol {
+text-align: center;
+}
+td.buttoncell {
+text-align: right;
+}
+td.paramcell label,
+td.paramcell input {
+display: inline-block;
+width: 48%;
+}

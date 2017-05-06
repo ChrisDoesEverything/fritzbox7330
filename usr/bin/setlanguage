@@ -1,0 +1,19 @@
+#! /bin/sh
+
+. /etc/init.d/rc.conf
+
+################################################################################
+echo "[$0] Parameter $1"
+if [ -f /etc/htmltext_$1.db ] ; then
+    echo "changing Language '$Language' to Language '$1'"
+    echo language $1 >$CONFIG_ENVIRONMENT_PATH/environment
+    if [ "${Language}" != "${1}" ]; then
+        #  Erfolgreich umgesetzt, Reboot erforderlich (aus Kompatibilitaet gewaehlt)
+        ctlmgr_ctl w tam settings/ResetDefaultNames 1 &
+        exit 0
+    fi
+    #  Erfolgreich gesetzt, kein Reboot erforderlich
+    exit 1
+fi
+
+exit -1

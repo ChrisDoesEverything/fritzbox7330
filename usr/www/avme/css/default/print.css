@@ -1,0 +1,46 @@
+body {
+min-width: 400px;
+}
+div#intro_bar_box,
+div#sub_menu_head,
+div#btn_form_foot,
+div#foot_menu_box,
+.popuphead {
+display: none;
+}
+a:hover {
+text-decoration: none;
+cursor: default;
+}
+div#menuBox {
+display: none;
+}
+div#page_content_menu_box {
+margin: 10px;
+float: none;
+width: auto;
+display: block;
+}
+ul.tabs {
+background: transparent;
+float: none;
+}
+ul.tabs li {
+display: none;
+float: none;
+}
+ul.tabs li.active {
+display: block;
+background: transparent;
+}
+ul.tabs li.active a {
+background: transparent;
+padding: 0;
+}
+div#main_page_all {
+width: auto;
+}
+div.scroll_area {
+height: auto !important;
+overflow: visible !important;
+}

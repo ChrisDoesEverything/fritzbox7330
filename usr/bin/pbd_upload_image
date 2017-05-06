@@ -1,0 +1,89 @@
+#!/bin/sh
+if [ $# -lt 2 ]; then exit 2; fi
+type=$3
+if [ -z "$type" ]; then
+    type=0
+fi
+dir=
+cd /var/InternerSpeicher 2>/dev/null
+if [ "$?" -eq "0" ]; then
+    while [ `realpath .` != "/" ]; do
+        wo=`/bin/mount | grep "\`realpath .\` "`
+        if [ "$?" -eq "0" ]; then
+            if echo $wo | grep -e '\(^/dev/loop\|^ramfs\)'; then
+                nand=0
+            else
+                nand=1
+            fi
+            break
+        fi
+        cd ..
+    done
+    if [ `realpath .` == "/" ]; then
+        nand=0
+    fi
+else
+    nand=0
+fi
+if [ -d "/var/InternerSpeicher" ] && [ "$nand" == "1" ]; then
+    dir="/var/InternerSpeicher"
+    if [ ! -d "$dir/FRITZ/fonpix" ]; then 
+        if ! mkdir -p "$dir/FRITZ/fonpix"; then
+            exit 4
+        fi
+    fi
+    if [ -d "$dir/FRITZ/fonpix" ]; then
+        dir="$dir/FRITZ/fonpix"
+        break
+    fi
+else
+    dirlist=`mount | grep '/dev/sd.*(rw' | sed -e 's/.*on \(.*\) type.*/\1/'`
+    if [ -z "$dirlist" ]; then
+        exit 3
+    fi
+    for i in $dirlist; do
+        if [ -d "$i" ]; then
+            if [ ! -d "$i/FRITZ/fonpix" ]; then 
+                if ! mkdir -p "$i/FRITZ/fonpix"; then
+                    nop=nop
+                fi
+            fi
+            if [ -d "$i/FRITZ/fonpix" ]; then
+                dir="$i/FRITZ/fonpix"
+                break
+            fi
+        fi
+    done
+    if [ -z "$dir" ]; then
+        exit 4
+    fi
+fi
+if [ -z "$dir" ]; then
+    exit 3
+fi
+cat - > "$dir"/upload.jpg
+ret=$?
+if [ $ret -ne 0 ]; then
+    rm -f "$dir"/upload.jpg
+    exit 4
+fi
+hash=`/bin/date +%s`
+filename="${hash}-${type}.jpg"
+picconv.sh "file://$dir/upload.jpg" "$dir/$filename" base > /dev/console
+ret=$?
+if [ $ret -ne 0 ]; then
+    rm -f "$dir"/upload.jpg
+    exit 1
+fi
+rm -f "$dir"/upload.jpg
+url="file://$dir/$filename"
+replaced=`/usr/bin/pbd --set-image-url --book="$1" --id="$2" --url="$url" --type="$type"`
+ret=$?
+if [ $ret -eq 0 ]; then
+    if [ -n "$replaced" ]; then
+        if ! grep "$replaced" /var/flash/phonebook >/dev/null; then
+            rm -f "${replaced#file://*}"
+        fi
+    fi
+fi
+exit $ret

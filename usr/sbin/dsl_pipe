@@ -1,0 +1,32 @@
+#!/bin/sh
+
+pipe_no=0
+
+# use specified pipe no
+case "$1" in
+	0|1|2)
+		pipe_no=$1; shift; ;;
+esac
+
+case "$1" in 
+	exit)
+		echo AVM safe quit dsl_control
+		echo turn off autoboot...
+		echo acs 0 > /var/dsl/pipe/dsl_cpe${pipe_no}_cmd
+		result=`cat /var/dsl/pipe/dsl_cpe${pipe_no}_ack`
+		echo "$result"
+		
+		echo quit dsl_control...
+		echo quit > /var/dsl/pipe/dsl_cpe${pipe_no}_cmd
+		result=`cat /var/dsl/pipe/dsl_cpe${pipe_no}_ack`
+		echo "$result"
+		
+		;;
+		
+	*)
+		echo $* > /var/dsl/pipe/dsl_cpe${pipe_no}_cmd
+		result=`cat /var/dsl/pipe/dsl_cpe${pipe_no}_ack`
+		echo "$result"
+		;;
+esac	
+

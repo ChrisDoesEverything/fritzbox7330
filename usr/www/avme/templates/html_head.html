@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=content-type content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title><?lua box.html(g_page_title) ?></title>
+<link rel="stylesheet" type="text/css" href="<?lua if (g_hostarea) then box.out(g_hostarea) end?>/css/default/main.css"/>
+<link rel="stylesheet" type="text/css" href="<?lua if (g_hostarea) then box.out(g_hostarea) end?>/css/default/sso_dropdown.css"/>
+<?lua
+local hostarea=""
+if (g_hostarea) then hostarea=g_hostarea end
+if not g_print_mode then
+box.out([[<link rel="stylesheet" type="text/css" href="]]..hostarea..[[/css/default/print.css" media="print"/>]])
+else
+box.out([[
+<link rel="stylesheet" type="text/css" href="]]..hostarea..[[/css/default/print.css"/>
+<link rel="stylesheet" type="text/css" href="]]..hostarea..[[/css/default/printpreview.css" media="screen"/>
+]])
+end
+?>
+<!--[if lte IE 8]>
+<link rel="stylesheet" type="text/css" href="<?lua if (g_hostarea) then box.out(g_hostarea) end?>/css/default/ie_fix.css"/>
+<![endif]-->
+<!--[if IE]>
+<style type="text/css">
+.hide_ftp_link {display: none;}
+</style>
+<![endif]-->
+<script type="text/javascript" src="<?lua if (g_hostarea) then box.out(g_hostarea) end?>/js/jxl.js"></script>
+<script type="text/javascript" src="<?lua if (g_hostarea) then box.out(g_hostarea) end?>/js/ready.js"></script>
+<script type="text/javascript" src="<?lua if (g_hostarea) then box.out(g_hostarea) end?>/js/help.js"></script>
+<script type="text/javascript" src="<?lua if (g_hostarea) then box.out(g_hostarea) end?>/js/popup.js?lang=<?lua box.out(config.language) ?>"></script>
+<script type="text/javascript" src="<?lua if (g_hostarea) then box.out(g_hostarea) end?>/js/zebra.js"></script>
+<script type="text/javascript" src="<?lua if (g_hostarea) then box.out(g_hostarea) end?>/js/ajax.js"></script>
+<script type="text/javascript" src="<?lua if (g_hostarea) then box.out(g_hostarea) end?>/js/sso_dropdown.js"></script>
+<!--[if lt IE 8]>
+<script type="text/javascript" src="<?lua if (g_hostarea) then box.out(g_hostarea) end?>/js/imgbuttonfixer.js"></script>
+<![endif]-->
+<script type="text/javascript">
+<?lua
+if box.query('box:status/localtime') == "" and box.query("time:settings/time") == "" then
+box.out([[
+function postTime() {
+var date = new Date();
+var data = [
+"settime=" + String(Math.floor(date.getTime()/1000)) + "," + String(date.getTimezoneOffset()),
+"sid=]], box.tojs(box.glob.sid), [["
+];
+ajaxPost("/post.lua", data.join("&"));
+}
+]])
+box.out("\n", [[ready.onReady(postTime);]])
+end
+?>
+if (window.location.search.indexOf("&popupwnd=1")!=-1) {
+ready.onReady(popup.prepareHeader);
+}
+ready.onReady(help.show);
+ready.onReady(zebra);
+</script>

@@ -1,0 +1,65 @@
+table {
+background-color: transparent;
+border: 0;
+width: 100%;
+}
+#energy th,
+#energy td {
+padding: 10px 5px;
+vertical-align: baseline;
+}
+#energy th {
+text-align: left;
+}
+th#desc {
+width: 170px;
+}
+th.legend {
+font-size: 12px;
+font-weight: normal;
+}
+th#detail {
+width: 300px;
+}
+td {
+vertical-align: top;
+}
+.bar {
+border: 1px solid #C6C7BF;
+height: 9px;
+display: inline-block;
+}
+.legend .bar {
+width: 25px;
+}
+.legend .seperated {
+margin-left: 10px;
+}
+div.meter {
+margin-bottom: 3px;
+}
+.act {
+background-color: #75CCFF;
+}
+.cum {
+background-color: #147DB2;
+}
+.fill {
+background-color: #FFFFFF;
+border-left-width: 0px;
+}
+.fillonly {
+background-color: #FFFFFF;
+}
+#energy td.eth {
+padding-left: 3px;
+font-size: 12px;
+}
+img.led {
+margin-left: 12px;
+position: relative;
+top: 3px;
+}
+td.eth img.first {
+margin-left: 0;
+}

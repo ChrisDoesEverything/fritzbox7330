@@ -1,0 +1,22 @@
+<? include tools/static_html_head.html ?>
+<script type="text/javascript">
+// Sofort weiterleiten, das HTML unten ist nur der Fallback
+location.href = "/system/cfgtakeover_edit.lua?sid=<? SID ?>&cfg_ok=1";
+</script>
+<? include tools/static_page_head.html ?>
+<div class="blue_bar_back">
+<h2>{?2569:956?}</h2>
+</div>
+<div id="page_content" class="page_content">
+<h4>{?2569:63?}</h4>
+<p>{?2569:861?}</p>
+<p>{?2569:983?}</p>
+<form method="GET" action="/system/cfgtakeover_edit.lua">
+<input type="hidden" name="sid" value="<? SID ?>">
+<input type="hidden" name="cfg_ok" value="">
+<div id="btn_form_foot">
+<button type="submit">{?txtBack?}</button>
+</div>
+</form>
+</div>
+<? include tools/static_foot.html ?>

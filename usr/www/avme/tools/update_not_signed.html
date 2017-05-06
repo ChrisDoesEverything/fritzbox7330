@@ -1,0 +1,29 @@
+<? include tools/static_html_head.html ?>
+<? include tools/static_page_head.html ?>
+<div class="blue_bar_back">
+<h2>{?223:533?}</h2>
+</div>
+<div id="page_content" class="page_content">
+<h4>{?96:264?}</h4>
+<p class="ErrorMsg">{?223:300?}</p>
+<p>{?223:867?}</p>
+<ul>
+<li>{?267:268?}</li>
+<li>{?605:865?}</li>
+</ul>
+<p>{?602:586?}</p>
+<p>{?584:326?}</p>
+<form method="POST" action="/cgi-bin/firmwarecfg" enctype="multipart/form-data">
+<p>
+<input type="hidden" name="sid" value="<? SID ?>">
+<button type="submit" name="reboot">{?223:994?}</button>
+</p>
+</form>
+<form method="POST" action="/cgi-bin/firmwarecfg" enctype="multipart/form-data">
+<p>
+<input type="hidden" name="sid" value="<? SID ?>">
+<button type="submit" name="install">{?865:773?}</button>
+</p>
+</form>
+</div>
+<? include tools/static_foot.html ?>

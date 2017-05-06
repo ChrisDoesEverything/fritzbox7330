@@ -1,0 +1,255 @@
+/****************** Css zum Anzeigen der Galery ******************/
+.galeryBox,
+.galeryBox *,
+.picBox,
+.picBox *,
+.menuBox,
+.menuBox * {
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+.galeryBox {
+position: fixed;
+top: 0;
+left: 0;
+z-index: 999;
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,0.8);
+color: #47bbff;
+}
+.picBox {
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 1000;
+width: 100%;
+height: 100%;
+text-align: center;
+background-image: url(images/please_wait_dark.gif);
+background-position: center;
+background-repeat: no-repeat;
+}
+.menuBox {
+display: block;
+font-size: 18px;
+position: fixed;
+top: -5cm;
+left: 0;
+z-index: 1001;
+width: 100%;
+background-color: rgba(0,0,0,0.85);
+color: #47bbff;
+transition: all 500ms;
+-webkit-transition: all 500ms;
+-moz-transition: all 500ms;
+-o-transition: all 500ms;
+}
+.menuBox.show {
+top: 0;
+}
+video {
+margin: auto;
+}
+.picDetails {
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+width: 100%;
+}
+.picDetailsName {
+-webkit-box-flex: 1;
+-moz-box-flex: 1;
+-webkit-flex: 1;
+-ms-flex: 1;
+flex: 1;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+text-align: left;
+padding: 1mm 1mm 1mm 2mm;
+-webkit-user-select: auto;
+-khtml-user-select: auto;
+-moz-user-select: auto;
+-o-user-select: auto;
+user-select: auto;
+}
+.picDetailsProgress {
+text-align: right;
+white-space: nowrap;
+padding: 1mm 2mm 1mm 1mm;
+-webkit-user-select: auto;
+-khtml-user-select: auto;
+-moz-user-select: auto;
+-o-user-select: auto;
+user-select: auto;
+}
+.picMenu {
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+-webkit-box-flex-flow: row-reverse wrap;
+-moz-box-flex-flow: row-reverse wrap;
+-webkit-flex-flow: row-reverse wrap;
+-ms-flex-flow: row-reverse wrap;
+flex-flow: row-reverse wrap;
+-webkit-box-align-content: flex-start;
+-moz-box-align-content: flex-start;
+-webkit-align-content: flex-start;
+-ms-align-content: flex-start;
+align-content: flex-start;
+-webkit-box-align-items: center;
+-moz-box-align-items: center;
+-webkit-align-items: center;
+-ms-align-items: center;
+align-items: center;
+-webkit-box-justify-content: center;
+-moz-box-justify-content: center;
+-webkit-justify-content: center;
+-ms-justify-content: center;
+justify-content: center;
+overflow: hidden;
+white-space: nowrap;
+padding: 0 1mm;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+color: #0885D5;
+}
+.galeryIcon {
+height: 1.25cm;
+width: 1.25cm;
+margin: 0 2mm;
+background-position: center;
+background-repeat: no-repeat;
+cursor: pointer;
+}
+.timer_box {
+background-color: transparent;
+-webkit-transition: background-color 0.5s linear;
+-moz-transition: background-color 0.5s linear;
+-ms-transition: background-color 0.5s linear;
+-o-transition: background-color 0.5s linear;
+transition: background-color 0.5s linear;
+-webkit-box-order: 9;
+-moz-box-order: 9;
+-webkit-order: 9;
+-ms-order: 9;
+order: 9;
+}
+.signal .timer_box {
+background-color: rgba(71,187,255,0.5);
+-webkit-transition: background-color 0.02s linear;
+-moz-transition: background-color 0.02s linear;
+-ms-transition: background-color 0.02s linear;
+-o-transition: background-color 0.02s linear;
+transition: background-color 0.02s linear;
+}
+.timer_box div {
+display: inline-block;
+}
+.timer_box .galeryIcon {
+height: 5mm;
+width: 5mm;
+margin: 2mm;
+vertical-align: middle;
+cursor: pointer;
+}
+.plus {
+background: linear-gradient(0deg, transparent 2mm, #0885d5 2mm, #0885d5 3mm, transparent 3mm) top left,
+linear-gradient(90deg, transparent 2mm, #0885d5 2mm, #0885d5 3mm, transparent 3mm) top left;
+background: -moz-linear-gradient(0deg, transparent 2mm, #0885d5 2mm, #0885d5 3mm, transparent 3mm) top left,
+-moz-linear-gradient(90deg, transparent 2mm, #0885d5 2mm, #0885d5 3mm, transparent 3mm) top left;
+background: -o-linear-gradient(0deg, transparent 2mm, #0885d5 2mm, #0885d5 3mm, transparent 3mm) top left,
+-o-linear-gradient(90deg, transparent 2mm, #0885d5 2mm, #0885d5 3mm, transparent 3mm) top left;
+background: -webkit-linear-gradient(0deg, transparent 2mm, #0885d5 2mm, #0885d5 3mm, transparent 3mm) top left,
+-webkit-linear-gradient(90deg, transparent 2mm, #0885d5 2mm, #0885d5 3mm, transparent 3mm) top left;
+background: -ms-linear-gradient(0deg, transparent 2mm, #0885d5 2mm, #0885d5 3mm, transparent 3mm) top left,
+-ms-linear-gradient(90deg, transparent 2mm, #0885d5 2mm, #0885d5 3mm, transparent 3mm) top left;
+}
+.minus {
+background: linear-gradient(90deg, transparent 2mm, #0885d5 2mm, #0885d5 3mm, transparent 3mm) top left;
+background: -moz-linear-gradient(90deg, transparent 2mm, #0885d5 2mm, #0885d5 3mm, transparent 3mm) top left;
+background: -o-linear-gradient(90deg, transparent 2mm, #0885d5 2mm, #0885d5 3mm, transparent 3mm) top left;
+background: -webkit-linear-gradient(90deg, transparent 2mm, #0885d5 2mm, #0885d5 3mm, transparent 3mm) top left;
+background: -ms-linear-gradient(90deg, transparent 2mm, #0885d5 2mm, #0885d5 3mm, transparent 3mm) top left;
+}
+.download {
+-webkit-box-order: 5;
+-moz-box-order: 5;
+-webkit-order: 5;
+-ms-order: 5;
+order: 5;
+background-image: url(images/ico_pic_download.png);
+}
+.share {
+-webkit-box-order: 3;
+-moz-box-order: 3;
+-webkit-order: 3;
+-ms-order: 3;
+order: 3;
+background-image: url(images/share.png);
+}
+.delete {
+-webkit-box-order: 7;
+-moz-box-order: 7;
+-webkit-order: 7;
+-ms-order: 7;
+order: 7;
+background-image: url(images/papierkorb.png);
+}
+.close {
+-webkit-box-order: 1;
+-moz-box-order: 1;
+-webkit-order: 1;
+-ms-order: 1;
+order: 1;
+background-image: url(images/ico_close.png);
+}
+.play {
+-webkit-box-order: 11;
+-moz-box-order: 11;
+-webkit-order: 11;
+-ms-order: 11;
+order: 11;
+background-image: url(images/ico_autoshow_play.png);
+}
+.stop {
+-webkit-box-order: 11;
+-moz-box-order: 11;
+-webkit-order: 11;
+-ms-order: 11;
+order: 11;
+background-image: url(images/ico_autoshow_stop.png);
+}
+.load_error {
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+margin: auto;
+color: #47bbff;
+background-color: #000000;
+font-size: 150%;
+padding: 1em;
+border-radius: 0.35em;
+-webkit-user-select: auto;
+-khtml-user-select: auto;
+-moz-user-select: auto;
+-o-user-select: auto;
+user-select: auto;
+}

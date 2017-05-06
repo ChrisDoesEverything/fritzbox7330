@@ -1,0 +1,40 @@
+<!-- de-first -begin -->
+<div id="foot_menu_box">
+<?lua
+require"http"
+local backtopage = http.url_param('backtopage', box.glob.script or "")
+local exception = array.truth{"/menus/sitemap.lua", "/menus/programs.lua"}
+if g_menu_active_page and not exception[box.glob.script] then
+backtopage = http.url_param('backtopage', g_menu_active_page)
+end
+local backtotab = box.get.tab or box.post.tab
+if backtotab then
+backtotab = http.url_param('backtotab', backtotab)
+end
+local href_expert = href.get('/system/expert.lua', backtopage, backtotab)
+local title = [[{?22:723?}]]
+local imgsrc = [[/css/default/images/icon_ansicht_normal.gif]]
+local spantext = [[{?22:840?}]]
+if (box.query("box:settings/expertmode/activated")=="1") then
+title = [[{?22:120?}]]
+imgsrc = [[/css/default/images/icon_ansicht_expert.gif]]
+spantext = [[{?22:838?}]]
+end
+box.out([[<a href="]]..box.tohtml(href_expert)..[[" title="]]..box.tohtml(title)..[[">]]..box.tohtml([[{?22:894?}: ]]..spantext)..[[</a> | ]])
+box.out([[<a href="]]..href.get("/menus/sitemap.lua")..[[" title="]]..box.tohtml([[{?22:709?}]])..[[" >]]..box.tohtml([[{?22:593?}]])..[[</a> | ]])
+if (config.language=="de") then
+box.out([[<a class="nocancel" href=']]..config.MANUAL_URL..[[' target='_blank'>]]..box.tohtml([[{?22:3?}]])..[[</a> | ]])
+box.out([[<a class="nocancel" href=']]..config.SERVICEPORTAL_URL..[[' target='_blank'>]]..box.tohtml([[{?22:1?}]])..[[</a> | ]])
+else
+box.out([[<a class="nocancel" href='http://www.avm.de/en/service/manuals/index.php' target='_blank'>]]..box.tohtml([[{?22:328?}]])..[[</a> | ]])
+end
+if config.language=="de" and config.NEWSLETTER_URL and config.NEWSLETTER_URL~="" then
+box.out([[<a class="nocancel" href=']]..config.NEWSLETTER_URL..[[' target='_blank'>{?22:606?}</a> | ]])
+end
+if (config.language=="de") then
+box.out([[<a class="nocancel" href='http://www.avm.de' target='_blank' style='margin-right:0px;'>avm.de</a> ]])
+else
+box.out([[<a class="nocancel" href='http://www.avm.de/en' target='_blank' style='margin-right:0px;'>avm.de</a> ]])
+end
+?>
+</div>

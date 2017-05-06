@@ -1,0 +1,64 @@
+.SNRSetTable {
+margin-left:20px;
+margin-bottom:10px;
+white-space: nowrap;
+background-color:transparent;
+border:none;
+}
+table.SNRSetTable td {
+padding-left:0px;
+}
+table.SNRSetTable td.radio{
+width:20px;
+}
+td.radio div{
+text-align:center;
+}
+div.smart span,
+div.smart_good span{
+font-size:11px;
+padding-left:16px;
+}
+div.smart,
+div.smart_good {
+height:10px;
+background-image: url("images/dsl_smart_hint.gif");
+background-repeat: no-repeat;
+background-position:center center;
+margin : 3px;
+}
+div.smart_good{
+background-image: url("images/dsl_smart_hint_good.gif");
+}
+div.smart_marker{
+background-image: url("images/dsl_smart_marker.gif");
+background-repeat: no-repeat;
+background-position:center center;
+height: 26px;
+margin: 3px;
+}
+table.line td{
+}
+td.emptyline {
+width:70px;
+}
+td.legend {
+font-size:11px;
+}
+td.line div{
+height:1px;
+width:70px;
+color: #000000;
+background-color: #000000;
+margin:0px;
+padding:0px;
+font-size:1px;
+}
+.botton_right {
+float: right;
+margin: 0px 0px 0px 10px;
+}
+.normal_p {
+clear: both;
+margin: 20px 0px 0px 0px;
+}

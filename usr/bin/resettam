@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ -d /data/tam ] ; then
+    rm -f /data/tam/*
+    if [ -d /data/tam/rec ]; then
+        rm -f /data/tam/rec/*
+    fi
+    if [ -f /etc/default.${CONFIG_PRODUKT}/${OEM}/config.tam ] ; then
+        cat /etc/default.${CONFIG_PRODUKT}/${OEM}/config.tam > /var/flash/tamconf
+    else
+        echo "TAM Defaults: /etc/default.${CONFIG_PRODUKT}/${OEM}/config.tam not found!"
+    fi
+fi

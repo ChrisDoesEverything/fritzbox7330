@@ -1,0 +1,56 @@
+#! /bin/sh
+
+. /etc/init.d/rc.conf
+
+################################################################################
+telefonie_werkseinstellungen() {
+    telwe_tffs_nodes_list=""
+    telwe_tffs_nodes_list="$telwe_tffs_nodes_list $((0x85)),telefon_misc"
+    telwe_tffs_nodes_list="$telwe_tffs_nodes_list $((0x84)),fx_cg"
+    telwe_tffs_nodes_list="$telwe_tffs_nodes_list $((0x83)),fx_moh"
+    telwe_tffs_nodes_list="$telwe_tffs_nodes_list $((0x82)),fx_lcr"
+    telwe_tffs_nodes_list="$telwe_tffs_nodes_list $((0x81)),fx_conf"
+    # telwe_tffs_nodes_list="$telwe_tffs_nodes_list $((0x80)),telefon_msns"  entfaellt mit tecfg v54
+
+    for telwe_conv_node in ${telwe_tffs_nodes_list} ; do 
+        telwe_conv_node_id=${telwe_conv_node%%,*} # bis zum ersten komma
+        telwe_conv_node_name=${telwe_conv_node##*,} # ab dem letzten komma
+        echo "clear_id ${telwe_conv_node_id}" >/proc/tffs
+        if [ -f "/var/flash/${telwe_conv_node_name}" ]; then 
+            # do not delete regular file (because we do not reboot at inserting provider defaults)
+            # rm -f /var/flash/${telwe_conv_node_name}; 
+            cat /dev/null > /var/flash/${telwe_conv_node_name}; 
+        fi
+    done
+}
+
+################################################################################
+echo "[$0] Parameter $1"
+country_changed="n"
+case $1 in 
+    0[0123456789]*|99)
+        if [ -d "/etc/default.$1" ] ; then
+            echo "Settings for Country '$1' found"
+            echo "changing Country '$Country' to Country '$1'"
+            echo country $1 >$CONFIG_ENVIRONMENT_PATH/environment
+            if [ "${Country}" != "${1}" ]; then
+                telefonie_werkseinstellungen
+                country_changed="y"
+            fi
+        else
+            echo "ERROR: Settings for Country '$1' not found"
+            return -2
+        fi
+        ;;
+    *)
+        echo "ERROR: Country '$1' --- illegal Parameter format!!!"
+        return -1
+        ;;
+esac
+if [ "${country_changed}" = "y" ] ; then
+    #  Erfolgreich umgesetzt, Reboot erforderlich (aus Kompatibilitaet gewaehlt)
+    return 0
+else
+    #  Erfolgreich gesetzt, kein Reboot erforderlich
+    return 1
+fi

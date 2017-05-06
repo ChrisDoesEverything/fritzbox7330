@@ -1,0 +1,44 @@
+#!/bin/sh
+if [ $# -lt 1 ]; then exit 3; fi
+type=$1
+if [ $type -gt 1 ]; then
+file="/var/tmp/moh_upload"
+cat - > $file
+fi
+if [ $type -gt 3 ]; then
+    rm -f $file
+    exit 2
+fi
+cd /var/tmp
+if [ $type -eq 0 ]; then
+	echo -e "\xFF\xFF\xFF\xFF" >fx_moh
+fi
+if [ $type -eq 1 ]; then
+	echo "xxxx" >fx_moh 
+fi
+if [ $type -eq 2 ]; then
+if [ ! -f "/var/tmp/ffmpeg_mp3.tables" ]; then
+playerd_tables
+fi
+ffmpegconv -i $file -o fx_moh --limit 32 --type 6
+elif [ $type -eq 3 ]; then
+if [ ! -f "/var/tmp/ffmpeg_mp3.tables" ]; then
+playerd_tables
+fi
+ffmpegconv -i $file -o fx_moh --limit 32 --type 7
+fi
+if [ $? -ne 0 ]; then
+    rm -f fx_moh
+    rm -f $file
+    exit 1
+fi
+cat fx_moh >/var/flash/fx_moh
+if [ $? -ne 0 ]; then
+    rm -f fx_moh
+    rm -f $file
+    exit 2
+fi
+killall -sigusr1 telefon
+rm -f fx_moh
+rm -f $file
+exit 0

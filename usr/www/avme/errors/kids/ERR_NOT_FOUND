@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=content-type content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{?2:1?}</title>
+<style type="text/css">
+body {
+background-color: #fffebd;
+}
+a {
+color: #4b8ac4;
+text-decoration: none;
+outline: none;
+vertical-align: baseline;
+}
+a:hover {
+text-decoration: underline;
+}
+p {
+margin: 6px 0px 6px 0px;
+}
+h2 {
+margin: 0px;
+padding-top: 5px;
+padding-bottom: 5px;
+font-size: 15px;
+}
+h4 {
+font-size: 13px;
+margin: 0 0 5px 0;
+}
+ul.hintlist {
+font-size: inherit;
+margin-left: 0;
+padding-left: 25px;
+}
+ul.hintlist li {
+font-size: inherit;
+padding-bottom: 3px;
+}
+#main_page_all {
+width: 100%;
+font-family: Arial,serif, sans-serif, cursive;
+font-size: 13px;
+color: #3f464c;
+margin-top: 60px;
+}
+#page_content_no_menu_box {
+width: 450px;
+margin: auto;
+}
+.area_box {
+border: 1px solid #8DA4A3;
+border-top-color: #90c0e8;
+border-radius: 10px;
+}
+.area_head {
+margin:0;
+border: none;
+border-radius: 10px 10px 0 0;
+width: 100%;
+/* IE kleiner 9 und alte andere Browser */
+background-color: #add1f1;
+/* IE 9 geht zwar ein verlauf aber der schaut dann aus den Runden ecken vor daher nur normaler Hintergrund*/
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c0e0ff', endColorstr='#90c0e8', GradientType=0);
+/* Safari 5.1+, Chrome 10+ */
+background: -webkit-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+/* Firefox 3.6+ */
+background: -moz-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+/* IE 10 */
+background: -ms-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+/* Opera 11.10+ */
+background: -o-linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+/* Ohne Vendorspezifisches Präfix */
+background: linear-gradient(top, #b0d0f0 44%, #a7cfef 59%, #a6ccef 65%, #9fc8ea 67%, #90c0e8 100%);
+}
+.area_content {
+background-color: #faf8f2;
+border: 1px solid #90a6a5;
+border-top: 0px;
+border-bottom: 0px;
+padding: 10px;
+overflow: auto;
+border: none;
+border-radius: 0 0 10px 10px;
+}
+.area_head h2 {
+margin: 0 10px;
+}
+</style>
+</head>
+<body>
+<div id="main_page_all">
+<div id="page_content_no_menu_box">
+<div class="area_box">
+<div class="area_head">
+<div><h2>{?gTxtFritzBox?}</h2></div>
+</div>
+<div class="area_content">
+<h4>{?2:6?}</h4>
+<p>{?2:5?}</p>
+<ul class="hintlist">
+<li>{?2:2?}</li>
+<li>{?2:3?}</li>
+<li>
+{?2:4?}
+<br>
+{?2:821?}
+</li>
+<li>
+{?2:894?}
+<br>
+{?2:674?}
+</li>
+</ul>
+<br>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

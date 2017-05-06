@@ -1,0 +1,32 @@
+<? include tools/static_html_head.html ?>
+<script type="text/javascript" src="/js/cookie.js"></script>
+<script type="text/javascript">
+function goBack() {
+var backToPage = readCookie("backtopage");
+eraseCookie("backtopage");
+var url = "";
+if (backToPage) {
+url = backToPage + "&sid=<? SID ?>";
+}
+if (!url) {
+url = "/fon_devices/tam_list.lua?sid=<? SID ?>";
+}
+location.href = url;
+return false;
+}
+</script>
+<? include tools/static_page_head.html ?>
+<div class="blue_bar_back">
+<h2>{?2001:487?}</h2>
+</div>
+<div id="page_content" class="page_content">
+<p>{?2001:723?}</p>
+<p>{?2001:534?}</p>
+<form method="GET" id="uiForm" action="/fon_devices/tam_list.lua" onsubmit="goBack();return false;">
+<div id="btn_form_foot">
+<input type="hidden" name="sid" value="<? SID ?>">
+<button type="submit">{?2001:13?}</button>
+</div>
+</form>
+</div>
+<? include tools/static_foot.html ?>

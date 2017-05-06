@@ -1,0 +1,90 @@
+</head>
+<body>
+<?lua box.out('<!-- pagename:'..box.glob.script..'-->') ?>
+<div id="main_page_all">
+<div id="intro_bar_box">
+<div id="intro_bar">
+<div id="intro_bar_left" class="oemlogo_<?lua box.out(config.oem) ?>">
+<img src="<?lua if (g_hostarea) then box.out(g_hostarea) end?>/css/default/images/leer.gif" usemap="#logo">
+<map name="logo">
+<?lua
+-- Um aus anderen Frames (z.B. support.html) heraus zu kommen, muss man manchmal das äußere Frame neu laden.
+if g_homelink_top then
+box.out([[<area shape="rect" coords="0,0,250,77" href="/" target="_top">]])
+else
+box.out([[<area shape="rect" coords="0,0,250,77" href="]]..href.get("/home/home.lua")..[[">]])
+end
+?>
+</map>
+</div>
+<div id="intro_boxinfo">
+<?lua
+box.out( [[<p>]]..box.tohtml( box.query("box:settings/hostname") )..[[</p>]] )
+?>
+</div>
+<div id="intro_bar_middle"></div>
+</div>
+</div>
+<div class="clear_float"></div>
+<?lua
+g_quickstart = ""
+if g_page_type == "all" or g_page_type == "wizard" then
+g_quickstart = "templates/quickstart.html"
+end
+?>
+<?include g_quickstart ?>
+<div id="menu_content_box">
+<?lua
+g_menu_file = "templates/menu_page_head.html"
+g_content_id = "page_content_menu_box"
+if g_page_type == nil or g_page_type == "no_menu" or g_page_type == "wizard" then
+g_menu_file = ""
+g_content_id = "page_content_no_menu_box"
+end
+?>
+<?include g_menu_file ?>
+<div id="<?lua box.out(g_content_id) ?>">
+<div id="contentTitle" class="blue_bar_back">
+<h2 id="uiPageTitle"><?lua box.out(g_page_title) ?></h2>
+</div>
+<div id="page_content" class="page_content">
+<?lua
+if g_page_needs_js then
+box.out([[<div id="page_needs_js_box" style="display:none;">]])
+end
+if g_page_type and g_page_type ~= "no_menu" and g_page_type ~= "wizard" then
+require"menu"
+menu.write_tabs(g_tab_options)
+end
+if g_local_tabs then
+require"menu"
+menu.write_local_tabs(g_local_tabs)
+end
+?>
+<div id="uiValidationWait" style="display:none;">
+<div class="wait">
+<p>
+{?676:258?}
+</p>
+<p class="waitimg">
+<img src="/css/default/images/wait.gif">
+</p>
+</div>
+<div class="btn_form_foot">
+</div>
+</div>
+<div id="uiValidationDone" style="display:none;">
+<div class="wait">
+<p>
+{?676:68?}
+</p>
+<p class="waitimg">
+<img src="/css/default/images/finished_ok_green.gif">
+</p>
+</div>
+<div class="btn_form_foot">
+<button type="button" id="uiValidationDoneOk">
+{?txtApplyOk?}
+</button>
+</div>
+</div>

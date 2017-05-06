@@ -1,0 +1,28 @@
+<? include tools/static_html_head.html ?>
+<script type="text/javascript" src="/js/jxl.js"></script>
+<script type="text/javascript">
+function init() {
+jxl.hide("btn_form_foot");
+jxl.setHtml("backwards",
+"<p class=\"waitimg\"><img src=\"/css/default/images/finished_error.gif\"></p>"+
+"<p>{?5362:758?}</p>");
+window.setTimeout(function(){ jxl.get("uiForm").submit(); }, 10000);
+}
+window.onload = init;
+</script>
+<? include tools/static_page_head.html ?>
+<div class="blue_bar_back">
+<h2>{?5362:423?}</h2>
+</div>
+<div id="page_content" class="page_content">
+<h4>{?5362:411?}</h4>
+<p>{?5362:242?}</p>
+<div id="backwards"></div>
+<form method="GET" id="uiForm" action="/internet/vpn.lua">
+<div id="btn_form_foot">
+<input type="hidden" name="sid" value="<? SID ?>">
+<button type="submit">{?txtBack?}</button>
+</div>
+</form>
+</div>
+<? include tools/static_foot.html ?>

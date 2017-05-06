@@ -1,0 +1,22 @@
+div.listdir ul {
+list-style-type: none;
+padding-left: 20px;
+}
+div.listdir li {
+position: relative;
+}
+div.listdir li.disk,
+div.listdir ul li {
+background: url(images/festplatte.gif) no-repeat 20px top;
+}
+div.listdir li.directory,
+div.listdir ul li ul li {
+background-image: url(images/ordner.gif );
+}
+div.listdir li input {
+margin-left: 40px;
+}
+div.listdir li.incomplete {
+color: grey;
+background-image: url(images/ordner_dis.gif);
+}

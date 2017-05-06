@@ -1,0 +1,45 @@
+<? include tools/static_html_head.html ?>
+<script type="text/javascript" src="/js/cookie.js"></script>
+<script type="text/javascript">
+function goBack() {
+var backToPage = readCookie("backtopage");
+eraseCookie("backtopage");
+var url = "";
+if (backToPage) {
+url = backToPage + "&sid=<? SID ?>&progress=start";
+}
+if (!url) {
+url = "/fon_devices/fax_send.lua?sid=<? SID ?>&progress=start";
+}
+location.href = url;
+return false;
+}
+function GoOn()
+{
+goBack();
+}
+function init()
+{
+window.setTimeout(GoOn, 1000);
+}
+window.onload = init;
+</script>
+<style>
+#btn_form_foot {
+height:20px;
+}
+</style>
+<? include tools/static_page_head.html ?>
+<div class="blue_bar_back">
+<h2>{?722:906?}</h2>
+</div>
+<div id="page_content" class="page_content">
+<p>{?722:225?}</p>
+<p>{?722:974?}</p>
+<form method="GET" id="uiForm" action="/fon_devices/fax_send.lua" onsubmit="goBack();return false;">
+<div id="btn_form_foot">
+<input type="hidden" name="sid" value="<? SID ?>">
+</div>
+</form>
+</div>
+<? include tools/static_foot.html ?>

@@ -1,0 +1,44 @@
+#!/bin/sh
+if [ $# -lt 2 ]; then exit 3; fi
+tam=$1
+type=$2
+if [ $tam -gt 9 ]; then
+    exit 2
+fi
+if [ $type -gt 2 ]; then
+    exit 2
+fi
+path=`telefon --tam_get_mounted_path`
+if [ $? -ne 0 ]; then
+    exit 2
+fi
+if [ -z "$path" ]; then
+    exit 2
+fi
+file="/var/tmp/tam_upload"
+cat - > $file
+cd /var/tmp
+if [ ! -f "/var/tmp/ffmpeg_mp3.tables" ]; then
+playerd_tables
+fi
+ffmpegconv -i $file -o $file.spx --type 5
+if [ $? -ne 0 ]; then
+    rm -f $file.spx
+    rm -f $file
+    exit 1
+fi
+cp $file.spx $path/uvp.$tam.00$type
+if [ $? -ne 0 ]; then
+    rm -f $file.spx
+    rm -f $file
+    exit 2
+fi
+telefon --tam_import_vp $tam $type $path/uvp.$tam.00$type
+if [ $? -ne 0 ]; then
+    rm -f $file.spx
+    rm -f $file
+    exit 2
+fi
+rm -f $file.spx
+rm -f $file
+exit 0
