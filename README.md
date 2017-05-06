@@ -16,5 +16,5 @@ And that would be it, the /usr/ directory was on my USB stick.
 
 # Contact me!
 
-if you have any more questions or want to conect me for another reason:
+If you have any more questions or want to conect me for another reason:
 Contact me on this e-mail: 17v5d@notsharingmy.info (Yes this is an actual e-mail)
